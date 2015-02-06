@@ -22,7 +22,7 @@
   <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
   <init-param>
    <param-name>services</param-name>
-   <param-value>com.courseadvisor.api.UserApi</param-value>
+   <param-value>com.courseadvisor.api.CourseApi,com.courseadvisor.api.NewsFeedApi,com.courseadvisor.api.UserApi</param-value>
   </init-param>
  </servlet>
  <servlet-mapping>
