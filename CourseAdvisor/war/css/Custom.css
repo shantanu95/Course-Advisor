@@ -145,6 +145,35 @@ body {
   overflow-x : hidden;
   }
   
+  .row-filter{
+  height : 10%;
+  width : 95%;
+  margin-top : 30px;
+  margin-left : 15px;
+  margin-right : 15px;
+  }
+  
+  .row-panel-question{
+  height : 30%;
+  width : 95%;
+  margin-top : 30px;
+  margin-left : 15px;
+  margin-right : 15px;
+  }
+  
+  .row-panel-review{
+  height : 30%;
+  width : 95%;
+  margin-top : 30px;
+  margin-left : 15px;
+  margin-right : 15px;
+  }
+  
+  .bootstrap-tagsinput{
+  width : 55%;
+  margin-top : 7px;
+  }
+ 
  
   
  
