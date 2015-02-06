@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<link href = "css/Custom.css" rel = "stylesheet">
+	<link href = "css/bootstrap.css" rel="stylesheet">
+	<script src = "js/custom.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+   	
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="searchbar">
+        <div class="input-group search one">
+        <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon1"></span>
+        <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+        </div>
+        </li>
+        <li class="toplinks">
+        <ul class="nav nav-pills" role="tablist">
+  			<li role="presentation"><a href="#">Home <span class="badge"></span></a></li>
+  			<li role="presentation"><a href="profile.html"><img src = "http://www.esquire.com/cm/esquire/images/8O/esq-pope-style-1213-xl.jpg" width = "20" height = "20">  Hello Virat</a></li>
+  			
+
+		</ul>
+		</li>
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+</div><!--/.navbar -->
+
+
+<div class = "row">
+<div class = "col-md-1"></div>
+
+<div class = "col-md-2">
+<div class="row-offcanvas row-offcanvas-left">
+  <div id="sidebar" class="sidebar-offcanvas">
+      <!-- div class="col-md-12"><!-->
+        <h3><center>Social Academia</h3>
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="#">News Feed</a></li>
+          <li><a href="#">Queries</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </div>
+  </div>
+  </div>
+  <div class = "col-md-5">
+  <div id="main">
+      	  <p class="visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
+          </p>
+          <h2><center>News-Feed</h2>
+          
+      </div>
+  </div>
+ <div class = "col-md-2">
+ 	<div class="row friends">
+ 		<div class = "friends-tickr" >
+ 			<div class="row-offcanvas row-offcanvas-left">
+  				<div id="sidebar" class="sidebar-offcanvas">
+     				 <!-- div class="col-md-12"><!-->
+        			<h3><center>Popular Courses</h3>
+       				 <ul class="nav nav-pills nav-stacked">
+          			<li class="active"><a href="#">Course A</a></li>
+          			<li><a href="#">Course B</a></li>
+          			<li><a href="#">Course C</a></li>
+          			<li><a href="#">Course D</a></li>
+        			</ul>
+      			</div>
+  			</div>
+ 		</div>
+ 	</div>
+ </div>
+ <div class = "col-md-1">
+</div>
+</div><!--/row-offcanvas -->
+</body>
+</html>
