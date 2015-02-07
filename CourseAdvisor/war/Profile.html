@@ -3,15 +3,37 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Create/Edit Profile</title>
-</head>
-<body>
-
+	
+	
 	<!--  Including all needed resources for developing front-end and query -->
-	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<link href = "css/Custom.css" rel = "stylesheet">
+	
 	<link href = "css/bootstrap.css" rel="stylesheet">
-	<script src="js/bootstrap.min.js"></script>
+	<link href = "css/tagsinput.css" rel = "stylesheet">
+	<link href = "css/TypeaheadA.css" rel = "stylesheet">
+	<link href = "css/Custom.css" rel = "stylesheet">
+	<script src = "https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src = "js/bootstrap.min.js"></script>
+	<script src = "js/typeahead.bundle.js"></script>
+	<script src = "js/tags.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('input.typeahead').typeahead({
+			name: 'accounts',
+			local: ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen']
+		});
+		console.log('done');
+		
+	});
+	</script>
+	<script src = "js/custom.js"></script>
+	
 	<!--  -->
+
+
+
+</head>
+
+<body>
 	
 	<!--  Top navbar with search bar and Profile -->
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -50,77 +72,47 @@
 		
 		<div class = "col-md-6 full-height">
 			<div class = "create-profile">
-			<h2><center><strong>Explore Course-Advisor, Create Your Own Profile</strong></center></h2>
+			<div class="page-header">
+  				<h1><center><strong>Explore CourseAdvisor, Create/Edit your Profile!</strong></center></h1>
+			</div>
 			<div class="input-group input-group-lg" style = " margin-top : 50px; margin-left : 7%; margin-right : 3%; width : 38%; float : left;">
   				<input type="text" class="form-control" placeholder="First Name" aria-describedby="sizing-addon1">
 			</div>
 			<div class="input-group input-group-lg" style = " margin-top : 50px; margin-left : 3%; margin-right : 7%; width : 38%; float : right;">
   				<input type="text" class="form-control" placeholder="Last Name" aria-describedby="sizing-addon1">
 			</div>
-			<div class="dropdown">
-  				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style=" height : 50px; margin-top : 30px; margin-right : 7%; margin-left : 7%; float : left; width : 86%;">
-  				Choose Nationality
-    			<span class="caret"></span>
-  				</button>
-  				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">None</a></li>
-    				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Argentine</a></li>
-    				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">India</a></li>
-   					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Singapore</a></li>
-  				</ul>
-			</div>
+			
 			<div class="input-group input-group-lg" style = " margin-top : 30px; margin-left : 7%; margin-right : 7%; width : 86%; float : left;">
   				<input type="text" class="form-control" placeholder="University" aria-describedby="sizing-addon1">
 			</div>
-			<div class="dropdown">
-  				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style=" height : 50px; margin-top : 30px; margin-right : 7%; margin-left : 7%; float : left; width : 86%;">
-  				Faculty of Study
-    			<span class="caret"></span>
-  				</button>
-  				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">College of Engineering</a></li>
-    				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">College of Arts and Social Sciences</a></li>
-    				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">College of Business</a></li>
-   					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">College of Pure Sciences</a></li>
-   					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">College of Architecture</a></li>
-   					
-  				</ul>
+			
+			<div class="input-group input-group-lg" style = " margin-top : 30px; margin-left : 7%; margin-right : 7%; width : 86%; float : right; ">
+  				<input type="text" class="form-control" placeholder="Nationality" aria-describedby="sizing-addon1" >
 			</div>
+		
 			<div class="input-group input-group-lg" style = " margin-top : 30px; margin-left : 7%; margin-right : 7%; width : 86%; float : left;">
   				<input type="text" class="form-control" placeholder="Degree of Study/Specialisation" aria-describedby="sizing-addon1">
 			</div>
 			
-			<div class="panel panel-default" style = "width : 98%; height : 7%;">
-				<div class="panel-body">
-					User Full Name and Degree
-						  
-					<div class="dropdown">
-  						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style=" height : 50px; margin-top : 30px; margin-right : 2%; margin-left : 7%; float : left; width : 27%;">
-  						Select Course Code and Title
-    					<span class="caret"></span>
-  						</button>
-  						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-		    				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Not Available in List</a></li>
-		    				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">CZ1002 Intro To Python</a></li>
-		    				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">CZ1003 Intro to C++</a></li>
-		   					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">CZ1004 Intro to JAVA</a></li>
-		   					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">CZ1005 Intro to PHP</a></li>
-		   					
-  						</ul>
-					</div>
-			
-					<div class="input-group input-group-lg" style = " margin-top : 30px; margin-left : 2%; margin-right : 2%; width : 35%; float : left;">
-  						<input type="text" class="form-control" placeholder="Add Course Code and Title" aria-describedby="sizing-addon1">
-					</div>
-					<div class="btn-group" role="group" aria-label="...">
-  						<button type="button" class="btn btn-default" style = " margin-top : 30px; margin-left : 2%; margin-right : 7%; width : 335%; float : left; height : 50px; background-color : #00ff00 ">Add</button>
-					</div>
-				  </div>
-			</div>		  
-				
+			<div class = "courses-taken" style = " font-size : 18px; margin-top : 30px; margin-left : 7%; margin-right : 7%; width : 86%; float : left;"> 
+				<strong> Courses Already Undertaken : </strong>
+				<input class='typeaheadtest' type="text" value="" data-role="tagsinput" style = " float : right ;">
 			</div>
-		</div>
-		<div class = "col-md-3"></div>
+			
+			<div class = "courses-inter" style = "padding-left : 63px; font-size : 18px; margin-top : 30px; margin-left : 7%; margin-right : 7%; width : 86%; float: left;">
+				<strong>Courses Interested In :</strong>
+				<input class='typeaheadtest' type="text" value="" data-role="tagsinput" style = " float : right ; ">
+		    </div>
+		    
+		    
+		    	<button class="btn btn-primary" type="button" style = " font-size : 24px; width : 250px; padding-left : 10px; margin-top : 70px; padding-bottom : 10px; float : left; margin-left : 39%; ">
+						<span class="input-group-addon glyphicon glyphicon-ok" id="basic-addon1" style = "width : 50px; float : left">
+						</span>
+						<strong>Submit !</strong>
+				</button>
+		    
+		</div>		  
+	<div class = "col-md-3"></div>
 	</div>
 		
 				

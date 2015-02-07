@@ -188,6 +188,17 @@ body {
   margin-top : 7px;
   }
  
+ .typeaheadtest-course.bootstrap-tagsinput{
+ width : 53%;
+ margin-top : 7px;
+ }
+ 
+ .submit-button{
+ margin-top : 70px;
+ font-size : 24px;
+ margin-left : 39%;
+ margin-right : 48%;
+ }
  
   
  

@@ -42,36 +42,39 @@
 		</li>
         
       </ul>
-    </div><!--/.nav-collapse -->
-</div><!--/.navbar -->
+     </div><!--/.nav-collapse -->
+	</div><!--/.navbar -->
+	
+	
 
 
 <div class = "row">
-<div class = "col-md-1"></div>
+	<div class = "col-md-1"></div>
 
-<div class = "col-md-2">
-<div class="row-offcanvas row-offcanvas-left">
-  <div id="sidebar" class="sidebar-offcanvas">
-      <!-- div class="col-md-12"><!-->
-        <h3><center>Social Academia</h3>
-        <ul class="nav nav-pills nav-stacked">
-          <li class="active"><a href="#">News Feed</a></li>
-          <li><a href="#">Queries</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Logout</a></li>
-        </ul>
-      </div>
-  </div>
-  </div>
-  <div class = "col-md-5">
-  <div id="main">
-      	  <div class="page-header">
-  			<h1><center><strong>News-Feed</strong></center></h1>
-		</div>
-          <div class = "row-filter ">
-          	<div class="input-group" style = " width : 100%; ">
-      			<div class="panel panel-default" style = "width : 98%; height : 7%;">
-						  <div class="panel-body">
+		<div class = "col-md-2">
+			<div class="row-offcanvas row-offcanvas-left">
+  				<div id="sidebar" class="sidebar-offcanvas">
+      			<!-- div class="col-md-12"><!-->
+        			<h3><center>Social Academia</h3>
+        				<ul class="nav nav-pills nav-stacked">
+			          <li class="active"><a href="#">News Feed</a></li>
+			          <li><a href="#">Queries</a></li>
+			          <li><a href="#">Profile</a></li>
+			          <li><a href="#">Course Description</a></li>
+			          <li><a href="#">Logout</a></li>
+			        </ul>
+			      </div>
+		  	</div>
+		 </div>
+  	<div class = "col-md-5">
+  		<div id="main">
+      		<div class="page-header">
+  				<h1><center><strong>News-Feed</strong></center></h1>
+			</div>
+          	<div class = "row-filter ">
+          		<div class="input-group" style = " width : 100%; ">
+      				<div class="panel panel-default" style = "width : 98%; height : 7%;">
+						<div class="panel-body">
 						    <strong>Filter</strong>
       						<span class="input-group-addon-filter" style = " margin-left : 15px; margin-right : 10px; ">
         					<input type="checkbox" aria-label="..." >
@@ -80,10 +83,10 @@
       						<br>
       						<b>Courses :</b> 
       						<input class='typeaheadtest' type="text" value="" data-role="tagsinput" style = " float : right ; width : 50%;">
-      					  </div>
+      					 </div>
+      				</div>
       			</div>
-      		</div>
-          </div>
+          	</div>
 		  
 		  <!-- A panel for question -->
 		  <div id="questionPanel" class = "row-panel-question">
@@ -92,7 +95,7 @@
     					<h3 class="panel-title" style = " height : 20px; ">Course Code and Title</h3>
   					</div>
   					<div class="panel-body" style = "height : 100%; padding-top : 5px;">
-    					<div class="panel panel-default" style = "width : 98%; height : 7%;">
+    					<!-- <div class="panel panel-default" style = "width : 98%; height : 7%;">
 						  <div id="nameDegree" class="panel-body">
 						    User Full Name and Degree
 						  </div>
@@ -141,15 +144,30 @@
 											      
 											      <div class="modal-body">
 											      	<div class="modal-body">
-											        <div class="panel panel-default">
-													  <div class="panel-heading">
-													    <h3 class="panel-title"><a href="#"><strong>Virat Chopra</strong></a></h3>
-													  </div>
-													  <div class="panel-body">
-													    The Professor is really good and goes through everything carefully. 
-													  </div>
+											        
+											        <!-- Panel for answering -->
+													     <div class = "user-comment" style = " margin-bottom : 10px; ">
+												  			<div class="input-group" >
+												      			<span class="input-group-btn">
+												        			<button class="btn btn-default question" type="button" style = "margin-bottom : 30px; height : 75px;">!</button>
+												      			</span>
+												      			<input type="text" class="form-control" placeholder="Submit an Answer..." style="margin-bottom : 30px; height : 75px;">
+												    		</div><!-- /input-group -->
+												  		  </div>
+												  	<!-- Panel For Answering Ends -->
+												  		
+												  		
+											        <!-- Template for each answer -->
+											        	<div class="panel panel-default">
+															<div class="panel-heading">
+													    		<h3 class="panel-title"><a href="#"><strong>Virat Chopra</strong></a></h3>
+													  		</div>
+													  		<div class="panel-body">
+													    		The Professor is really good and goes through everything carefully. 
+													  		</div>
+														</div>
+													<!-- Template Ends -->
 													</div>
-											      </div>
 											      </div>
 											      
 											      

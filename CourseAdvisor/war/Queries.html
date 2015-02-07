@@ -2,9 +2,209 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Answer Questions</title>
+
+<!--  Including all needed resources for developing front-end and query -->
+	<link href = "css/Custom.css" rel = "stylesheet">
+	<link href = "css/bootstrap.css" rel="stylesheet">
+	<link href = "css/tagsinput.css" rel="stylesheet">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src = "js/typeahead.js"></script>
+	<script src = "js/tags.min.js"></script>
+
+	<!--  -->
 </head>
 <body>
 
+   <!-- Nav-bar creation code -->
+   <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="searchbar">
+        <div class="input-group search one">
+        <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon1"></span>
+        <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+        </div>
+        </li>
+        <li class="toplinks">
+        <ul class="nav nav-pills" role="tablist">
+  			<li role="presentation"><a href="#">Home <span class="badge"></span></a></li>
+  			<li role="presentation"><a href="profile.html"><img src = "http://www.esquire.com/cm/esquire/images/8O/esq-pope-style-1213-xl.jpg" width = "20" height = "20">  Hello Virat</a></li>
+  			
+
+		</ul>
+		</li>
+        
+      </ul>
+     </div><!--/.nav-collapse -->
+	</div><!--/.navbar -->
+	
+	<div class = "row">
+	<div class = "col-md-1"></div>
+
+		<div class = "col-md-2">
+			<div class="row-offcanvas row-offcanvas-left">
+  				<div id="sidebar" class="sidebar-offcanvas">
+      			<!-- div class="col-md-12"><!-->
+        			<h3><center>Social Academia</h3>
+        				<ul class="nav nav-pills nav-stacked">
+			          <li><a href="#">News Feed</a></li>
+			          <li class="active"><a href="#">Answer Questions</a></li>
+			          <li><a href="#">Profile</a></li>
+			          <li><a href="#">Course Description</a></li>
+			          <li><a href="#">Logout</a></li>
+			        </ul>
+			      </div>
+		  	</div>
+		 </div>
+  	<div class = "col-md-5">
+  		<div id="main">
+      		<div class="page-header">
+  				<h1><center><strong>Answer Questions</strong></center></h1>
+			</div>
+          	<div class = "row-filter ">
+          		<div class="input-group" style = " width : 100%; ">
+      				<div class="panel panel-default" style = "width : 98%; height : 7%;">
+						<div class="panel-body">
+						    <strong>Filter</strong>
+      						<span class="input-group-addon-filter" style = " margin-left : 15px; margin-right : 10px; ">
+        					<input type="checkbox" aria-label="..." >
+        						Posts from only Friends
+      						</span>
+      						<br>
+      						<b>Courses :</b> 
+      						<input class='typeaheadtest' type="text" value="" data-role="tagsinput" style = " float : right ; width : 50%;">
+      					 </div>
+      				</div>
+      			</div>
+          	</div>
+		  
+		  <!-- A panel for question -->
+		  <div id="questionPanel" class = "row-panel-question">
+		  		<div class="panel panel-success" style = " height : 100%;">
+  					<div class="panel-heading">
+    					<h3 class="panel-title" style = " height : 20px; ">Course Code and Title</h3>
+  					</div>
+  					<div class="panel-body" style = "height : 100%; padding-top : 5px;">
+    					<!-- <div class="panel panel-default" style = "width : 98%; height : 7%;">
+						  <div id="nameDegree" class="panel-body">
+						    User Full Name and Degree
+						  </div>
+						</div>-->
+						<strong><a href="#">Virat Chopra</a> </strong> Asked the following Question :<br><br>
+						
+						<div class = " col-md-1 panel" style = " width : auto; margin-left : 0px; padding-left : 0px;">
+							<button class="btn btn-primary" type="button" style=" width : 50px; padding-left : 5px;">
+  								<center>
+  								<span class="input-group-addon glyphicon glyphicon-arrow-up" id="basic-addon1" >
+  								</span>
+  								</center>
+  								<span class="badge" style = "margin-left : 2px">21
+  								</span>
+							</button>
+							<br>
+							<button class="btn btn-primary" type="button" style = " width : 50px; padding-left : 5px; ">
+								<center>
+								<span class="input-group-addon glyphicon glyphicon-arrow-down" id="basic-addon1">
+								</span>
+								</center>
+  								<span class="badge">21</span>
+							</button>
+						</div>
+							<div class = "question">
+							Sample Question Regarding CZ 1002 Intro to C++??
+							</div>
+							
+							<!-- Create an Answer Button -->
+										<div class = "answer-button" style = "float : right; position : relative; bottom : 0px; right : 0px; margin-top:5%;">
+																					
+											<!-- Button trigger modal -->
+											<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+											  Answers
+											</button>
+											
+											<!-- Modal -->
+											<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+											  <div class="modal-dialog">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											        <h4 class="modal-title" id="myModalLabel"><strong>Question...</strong></h4>
+											      </div>
+											      
+											      <!--  Answer Modal Lookup -->
+											      
+											      <div class="modal-body">
+											      	<div class="modal-body">
+											        
+												        <!-- Panel for answering -->
+													     <div class = "user-comment" style = " margin-bottom : 10px; ">
+												  			<div class="input-group" >
+												      			<span class="input-group-btn">
+												        			<button class="btn btn-default question" type="button" style = "margin-bottom : 30px; height : 75px;">!</button>
+												      			</span>
+												      			<input type="text" class="form-control" placeholder="Submit an Answer..." style="margin-bottom : 30px; height : 75px;">
+												    		</div><!-- /input-group -->
+												  		  </div>
+												  		<!-- Panel For Answering Ends -->
+												  		
+												  		<!-- Template for each answer -->
+												        <div class="panel panel-default">
+												        <div class="panel-heading">
+														    <h3 class="panel-title"><a href="#"><strong>Virat Chopra</strong></a></h3>
+														  </div>
+														  <div class="panel-body">
+														    The Professor is really good and goes through everything carefully. 
+														  </div>
+														</div>
+														<!-- Template ends -->
+													 
+													</div>
+											      </div>
+											      
+											      <!-- Modal Body Ends -->
+											      
+											      
+											      <div class="modal-footer">
+											        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											        <button type="button" class="btn btn-primary">Save changes</button>
+											      </div>
+											    </div>
+											  </div>
+											</div>
+										
+										</div>
+  					</div>
+				</div>
+		  </div>
+		</div>
+	</div>
+	<div class = "col-md-2">
+ 		<div class="row friends">
+ 			<div class = "friends-tickr" >
+ 				<div class="row-offcanvas row-offcanvas-left">
+  					<div id="sidebar" class="sidebar-offcanvas">
+     				 	<!-- div class="col-md-12"><!-->
+        				<h3><center>Popular Courses</h3>
+       				 	<ul class="nav nav-pills nav-stacked">
+          					<li class="active"><a href="#">Course A</a></li>
+          					<li><a href="#">Course B</a></li>
+          					<li><a href="#">Course C</a></li>
+          					<li><a href="#">Course D</a></li>
+        				</ul>
+      				</div>
+  				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+  </div>	
 </body>
 </html>
