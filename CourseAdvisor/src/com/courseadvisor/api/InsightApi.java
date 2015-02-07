@@ -102,7 +102,7 @@ public class InsightApi {
 		mp.put("CZ2001", 2);
 		mp.put("AB1213", 2);
 		mp.put("CZ1002", 2);
-		mp.put("CZ2003", 2);
+		mp.put("CZ1003", 2);
 		mp.put("BU8201", 4);
 		mp.put("MH1812", 1);
 		mp.put("HE9091", 4);
