@@ -86,6 +86,8 @@ function ready(){
 						temp.find("h3 a").attr("href", "Course.html?code=" + data.items[i].courseDetail.split(" -")[0])
 						temp.find("#name").html(data.items[i].userName);
 						temp.find(".question").html(data.items[i].data);
+						temp.find("#upVoteBadge").html(data.items[i].numUpVotes);
+						temp.find("#downVoteBadge").html(data.items[i].numDownVotes);
 						main.append(temp);
 					}else if(item.whatKind == 1){
 						temp = reviewCard.clone();
@@ -93,6 +95,8 @@ function ready(){
 						temp.find("h3 a").attr("href", "Course.html?code=" + data.items[i].courseDetail.split(" -")[0])
 						temp.find("#name").html(data.items[i].userName);
 						temp.find(".question").html(data.items[i].data);
+						temp.find("#upVoteBadge").html(data.items[i].numUpVotes);
+						temp.find("#downVoteBadge").html(data.items[i].numDownVotes);
 						main.append(temp);
 					}
 					
