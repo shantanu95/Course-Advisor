@@ -107,6 +107,11 @@ function ready(){
 		});
 	});
 	
+	
+	
+	$('a[href="#collapseOne"]').click();
+	
+
 	$('a[href="#collapseOne"]').click(function(){
 		setTimeout(function(){$("#mainContainer").scrollTo("#headingOne", 800);}, 500);
 		
@@ -114,9 +119,6 @@ function ready(){
 	$('a[href="#collapseTwo"]').click(function(){
 		setTimeout(function(){$("#mainContainer").scrollTo("#headingTwo", 800);}, 500);
 	});
-	
-	
-	$('a[href="#collapseOne"]').click();
 	
 	$('input[type=checkbox]').change(function(e){
 		addReviews($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
