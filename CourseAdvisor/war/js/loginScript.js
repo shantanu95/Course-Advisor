@@ -25,6 +25,6 @@ function ready(){
 
 function handleResponse(response){
 	if(response.status === 'connected'){
-		console.log(response);
+		window.location = 'Main.html';
 	}
 }

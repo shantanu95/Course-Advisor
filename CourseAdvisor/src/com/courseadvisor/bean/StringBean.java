@@ -1,4 +1,4 @@
-package com.courseadvisor.entity;
+package com.courseadvisor.bean;
 
 public class StringBean {
 

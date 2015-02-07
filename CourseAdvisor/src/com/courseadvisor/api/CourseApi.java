@@ -10,9 +10,14 @@ import com.courseadvisor.entity.User;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiMethod.HttpMethod;
+import static com.googlecode.objectify.ObjectifyService.ofy;
 
 @Api(name="courses")
 public class CourseApi {
+	
+	public void createCourse(Course c){
+		ofy().save().entities(c).now();
+	}
 
 	@ApiMethod(path="courseData/{code}", httpMethod=HttpMethod.GET)
 	public Course getCourseData(@Named("code") String code){

@@ -16,6 +16,6 @@ public class Question {
 	private String data;
 	private Date timestamp;
 	private int numUpVotes, numDownVotes;
-	private ArrayList<Key<Answer>> answerList = new ArrayList<>();;
+	private ArrayList<Key<Answer>> answerList = new ArrayList<>();
 
 }
