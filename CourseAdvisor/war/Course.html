@@ -9,8 +9,12 @@
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<link href = "css/Custom.css" rel = "stylesheet">
 	<link href = "css/bootstrap.css" rel="stylesheet">
-	<script src = "js/custom.js"></script>
+	<link href = "css/tagsinput.css" rel="stylesheet">
 	<script src="js/bootstrap.min.js"></script>
+	<script src = "js/typeahead.js"></script>
+	<script src = "js/tags.min.js"></script>
+	<script src = "js/custom.js"></script>
+
 	<!--  -->
 	
 	<!--  Top navbar with search bar and Profile -->
@@ -63,57 +67,215 @@
   	</div>
   	
   	<div class = "col-md-5 full-height">
- 		<h2><center><strong>COURSE DESCRIPTION & USER REVIEWS</strong></center></h2>
- 		<br>
- 		<br>
- 		<h4><center><strong>Course Code and Title</strong></center></h4>
-  		<div class = "row-course-struct full-height">
-  			<div class= "col-md-6 splita">
-  				<h6><center><strong>Course Description</strong></center></h6>
+ 		<div class="page-header">
+  			<h1>Course Code<small>  Course Title</small></h1>
+		</div>
+  		<div class = "row-course-description">
+  			<div class = "col-md-6 split-description" style = " height : 100%; ">
+  				<div class="panel panel-default" style = " height : 100%; ">
+				  <div class="panel-heading">
+				    <h3 class="panel-title"><center>Course Description</center></h3>
+				  </div>
+				  <div class="panel-body" style = "height : 60%;">
+				    Panel content
+				  </div>
+				</div>
   			</div>
-  			<div class= "col-md-6 splitb">
-  				<div class = "row-difficult" style = " margin-top : 10px; margin-left : 1%; margin-right : 1%; height : 46%; overflow-x : hidden; overflow-y : hidden; background-color : #333; color : #fff;">
-  					<h6><center><strong>Difficulty</strong></center></h6>
-  				</div>
-  				<div class = "row-interesting" style = " margin-top : 10px; margin-left : 1%; margin-right : 1%; height : 46%; overflow-x : hidden; overflow-y : hidden; background-color : #333; color : #fff">
-  					<h6><center><strong>Interesting</strong></center></h6>
-  				</div>
+  			
+  			<div class = "col-md-6 split-description" style = " height : 100%; ">
+  				<div class="panel panel-default" style = " height : 46%; ">
+				  <div class="panel-heading">
+				    <h3 class="panel-title"><center>Difficulty</center></h3>
+				  </div>
+				  <div class="panel-body" style = "height : 60%;">
+				    Rating
+				    <br>
+				    <input type="number" data-max = "5" data-min="0" name="your_awesome_parameter" id="some_id" class="rating" />
+				  </div>
+				</div>
+				
+				<div class="panel panel-default" style = " height : 46%; ">
+				  <div class="panel-heading">
+				    <h3 class="panel-title"><center>Interesting</center></h3>
+				  </div>
+				  <div class="panel-body" style = "height : 60%;">
+				    Rating
+				    <input type="number" data-max = "5" data-min="0" name="your_awesome_parameter" id="some_id" class="rating" />
+				  </div>
+				</div>
   			</div>
-  		
+  			
   		</div>
   		
-  		<div class = "row-reviews">
-  			User1<br><br>
-  			User2<br><br>
-  			User3<br><br>
-  			User1<br><br>
-  			User2<br><br>
-  			User3<br><br>
-  			User1<br><br>
-  			User2<br><br>
-  			User3<br><br>
-  			User1<br><br>
-  			User2<br><br>
-  			User3<br><br>
-  			User1<br><br>
-  			User2<br><br>
-  			User3<br><br>
-  			User1<br><br>
-  			User2<br><br>
-  			User3<br><br>
-  			User1<br><br>
-  			User2<br><br>
-  			User3<br><br>
+  		<div class = "row-reviews" style = " margin-top : 30px; margin-bottom : 20px; ">
+  			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="headingOne">
+			      <h4 class="panel-title">
+			        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			          <strong><h5><b>User Reviews of The Course</b></h4></strong>
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+			      <div class="panel-body">
+			      
+			      	 <!-- Submit A Question -->
+				      <div class = "user-comment" style = " margin-bottom : 10px; ">
+			  			<div class="input-group" >
+			      			<span class="input-group-btn">
+			        			<button class="btn btn-default" type="button" style = "margin-bottom : 30px; height : 75px;"><strong>Comment</strong></button>
+			      			</span>
+			      			<input type="text" class="form-control" placeholder="Submit a Question..." style="margin-bottom : 30px; height : 75px;">
+			    		</div><!-- /input-group -->
+			  		 </div>
+			      
+			        <!-- A panel for review -->
+					  <div class = "row-panel-question" style = " margin-top : 20px; margin-bottom : 10px; ">
+					  		<div class="panel panel-info" style = " height : 100%;">
+			  					<div class="panel-heading">
+			    					<h3 class="panel-title" style = " height : 20px; ">Course Code and Title</h3>
+			  					</div>
+			  					<div class="panel-body" style = "height : 100%;">
+			    					<div class="panel panel-default" style = "width : 98%; height : 7%;">
+									  <div class="panel-body">
+									    User Full Name and Degree
+									  </div>
+									</div>
+									
+									<div class = " col-md-1 panel" style = " width : auto;  margin-left : 0px; padding-left : 0px;">
+										<button class="btn btn-primary" type="button" style=" width : 50px; padding-left : 5px;">
+			  								<center>
+			  								<span class="input-group-addon glyphicon glyphicon-arrow-up" id="basic-addon1" >
+			  								</span>
+			  								</center>
+			  								<span class="badge" style = "margin-left : 2px">21
+			  								</span>
+										</button>
+										<br>
+										<button class="btn btn-primary" type="button" style = " width : 50px; padding-left : 5px; ">
+											<center>
+											<span class="input-group-addon glyphicon glyphicon-arrow-down" id="basic-addon1">
+											</span>
+											</center>
+			  								<span class="badge">21</span>
+										</button>
+									</div>
+									
+										<div class = "question">
+										Sample Review Regarding CZ 1003 Intro to Python....
+										</div>
+									
+			  					</div>
+			  					
+							</div>
+					  </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="headingTwo">
+			      <h4 class="panel-title">
+			        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+			          <strong><h5><b>User Questions on the Course</b></h5></strong>
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+			      <div class="panel-body">
+			      
+			      <!-- Submit A Question -->
+			      <div class = "user-comment" style = " margin-bottom : 10px; ">
+		  			<div class="input-group" >
+		      			<span class="input-group-btn">
+		        			<button class="btn btn-default question" type="button" style = "margin-bottom : 30px; height : 75px;">?</button>
+		      			</span>
+		      			<input type="text" class="form-control" placeholder="Submit a Question..." style="margin-bottom : 30px; height : 75px;">
+		    		</div><!-- /input-group -->
+		  		</div>
+			        
+			        
+			        <!-- A panel for question -->
+					  <div class = "row-panel-question" style = " margin-top : 15px; position : relative; ">
+					  		<div class="panel panel-success" style = " height : 100%; position : relative; ">
+			  					<div class="panel-heading">
+			    					<h3 class="panel-title" style = " height : 20px; ">Course Code and Title</h3>
+			  					</div>
+			  					<div class="panel-body" style = "height : 100%; position : relative; ">
+			    					<div class="panel panel-default" style = "width : 98%; height : 7%;">
+									  <div class="panel-body">
+									    User Full Name and Degree
+									  </div>
+									</div>
+									
+									<div class = " col-md-1 panel" style = " width : auto; margin-left : 0px; padding-left : 0px;">
+										<button class="btn btn-primary" type="button" style=" width : 50px; padding-left : 5px;">
+			  								<center>
+			  								<span class="input-group-addon glyphicon glyphicon-arrow-up" id="basic-addon1" >
+			  								</span>
+			  								</center>
+			  								<span class="badge" style = "margin-left : 2px">21
+			  								</span>
+										</button>
+										<br>
+										<button class="btn btn-primary" type="button" style = " width : 50px; padding-left : 5px; ">
+											<center>
+											<span class="input-group-addon glyphicon glyphicon-arrow-down" id="basic-addon1">
+											</span>
+											</center>
+			  								<span class="badge">21</span>
+										</button>
+									</div>
+									
+									
+										<div class = "question" style=  "margin-top : 5px; margin-bottom : 5px; height : 80%; ">
+										Sample Question Regarding CZ 1002 Intro to C++?
+										</div>
+										
+										
+										<!-- Create an Answer Button -->
+										<div class = "answer-button" style = "float : right; position : relative; bottom : 0px; right : 0px; margin-top:5%;">
+																					
+											<!-- Button trigger modal -->
+											<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+											  Answers
+											</button>
+											
+											<!-- Modal -->
+											<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+											  <div class="modal-dialog">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											        <h4 class="modal-title" id="myModalLabel"><strong>Question...</strong></h4>
+											      </div>
+											      <!--  Answer Modal Lookup -->
+											      
+											      <div class="modal-body">
+											        
+											        
+											      </div>
+											      <div class="modal-footer">
+											        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											        <button type="button" class="btn btn-primary">Save changes</button>
+											      </div>
+											    </div>
+											  </div>
+											</div>
+										
+										</div>
+										
+										
+									
+			  					</div>
+							</div>
+					  </div>
+			      </div>
+			    </div>
+			  </div>
+  			</div>
   		</div>
-  		<div class = "user-comment">
-  			<div class="input-group" >
-      			<span class="input-group-btn">
-        			<button class="btn btn-default" type="button" style = "margin-bottom : 30px; height : 75px;">Comment!</button>
-      			</span>
-      			<input type="text" class="form-control" placeholder="Submit a Review" style="margin-bottom : 30px; height : 75px;">
-    		</div><!-- /input-group -->
   		
-  		</div>
   	</div>
   	<div class = "col-md-2">
  	<div class="row friends">
