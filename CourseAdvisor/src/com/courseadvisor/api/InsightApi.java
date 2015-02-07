@@ -3,7 +3,9 @@ package com.courseadvisor.api;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.courseadvisor.bean.InsightBean;
 import com.courseadvisor.entity.Course;
@@ -16,6 +18,8 @@ import static com.googlecode.objectify.ObjectifyService.ofy;
 
 @Api(name="insight")
 public class InsightApi {
+	
+	private Map<String, Integer> mp = new HashMap<String, Integer>();
 
 	@ApiMethod(path="subscriber", httpMethod=HttpMethod.GET)
 	public List<InsightBean> getBySubscriber(){
@@ -88,6 +92,33 @@ public class InsightApi {
 			public int compare(InsightBean o1, InsightBean o2) {
 				// TODO Auto-generated method stub
 				return (int) (o2.getInterestRating() - o1.getInterestRating());
+			}
+		});
+		return i;
+	}
+	
+	@ApiMethod(path="friends", httpMethod=HttpMethod.GET)
+	public List<InsightBean> getByFriends(){
+		mp.put("CZ2001", 2);
+		mp.put("AB1213", 2);
+		mp.put("CZ1002", 2);
+		mp.put("CZ2003", 2);
+		mp.put("BU8201", 4);
+		mp.put("MH1812", 1);
+		mp.put("HE9091", 4);
+		
+		List<Course> c = ofy().load().type(Course.class).list();
+		List<User> usr = ofy().load().type(User.class).list();
+		List<InsightBean> i = new ArrayList<>();
+		for(Course cx : c){
+			i.add(cToI(cx));
+		}
+		Collections.sort(i, new Comparator<InsightBean>() {
+
+			@Override
+			public int compare(InsightBean o1, InsightBean o2) {
+				// TODO Auto-generated method stub
+				return (int) (mp.get(o2.getCode()) - mp.get(o1.getCode()));
 			}
 		});
 		return i;

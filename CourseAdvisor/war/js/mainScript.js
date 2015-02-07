@@ -41,7 +41,7 @@ var substringMatcher = function(strs) {
 	};
 	};
 	 
-	var courses = [
+	var courses = ['CZ2001 - Algorithms', 'AB1213'
 	]; 	
 
 var courseTile;
