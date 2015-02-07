@@ -41,16 +41,8 @@ var substringMatcher = function(strs) {
 	};
 	};
 	 
-	var courses = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-	'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-	'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-	'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-	'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-	'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-	'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-	'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-	'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-	]; 
+	var courses = [
+	]; 	
 
 var courseTile;
 function ready(){
@@ -73,7 +65,42 @@ function ready(){
 			var temp = courseTile.clone();
 			temp.find("h4").html(data.items[i].code);
 			temp.find("small").html(data.items[i].title);
+			temp.find("a").attr("href", "Course.html?code=" + data.items[i].code);
 			main.append(temp);
+		}
+	});
+	
+	$("input[type=checkbox]").change(function(e){
+		if($("input[type=checkbox]").prop("checked")){
+			$.get('_ah/api/newsfeed/v1/getFrndActivity?email1=' + encodeURIComponent("shantanu002") + 
+					"&email2=" + encodeURIComponent(""), function(data){
+				
+				var main = $("#main");
+				main.empty();
+				for(var i = 0; i < data.items.length; i++){
+					var item = data.items[i];
+					var temp;
+					if(item.whatKind == 2){
+						temp = questionCard.clone();
+						temp.find("h3 a strong").html(data.items[i].courseDetail);
+						temp.find("h3 a").attr("href", "Course.html?code=" + data.items[i].courseDetail.split(" -")[0])
+						temp.find("#name").html(data.items[i].userName);
+						temp.find(".question").html(data.items[i].data);
+						main.append(temp);
+					}else if(item.whatKind == 1){
+						temp = reviewCard.clone();
+						temp.find("h3 a strong").html(data.items[i].courseDetail);
+						temp.find("h3 a").attr("href", "Course.html?code=" + data.items[i].courseDetail.split(" -")[0])
+						temp.find("#name").html(data.items[i].userName);
+						temp.find(".question").html(data.items[i].data);
+						main.append(temp);
+					}
+					
+				}
+				
+			});
+		}else{
+			loadNewsFeed();
 		}
 	});
 }
@@ -104,8 +131,6 @@ function loadNewsFeed(){
 			}
 			
 		}
-		
-		setTimeout(loadNewsFeed, 5000);
 		
 	});
 }

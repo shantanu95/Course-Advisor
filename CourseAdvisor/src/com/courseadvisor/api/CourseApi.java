@@ -22,6 +22,8 @@ import com.google.api.server.spi.config.ApiMethod.HttpMethod;
 @Api(name="courses")
 public class CourseApi {
 	
+	private String email1 = "", email2 = ""; 
+	
 	public void createCourse(Course c){
 		ofy().save().entity(c).now();
 	}
@@ -46,6 +48,8 @@ public class CourseApi {
 				}
 				if(major)
 					b = b && tmp.getMajor().equals(usr.getMajor());
+				if(friends)
+					b = b && (act.getEmail().equals(email1) || act.getEmail().equals(email2));
 				
 				if(b)
 					res.add(NewsFeedApi.activityToCard(act));
@@ -74,12 +78,25 @@ public class CourseApi {
 	}
 	
 	@ApiMethod(path="getQuestions/{code}", httpMethod=HttpMethod.GET)
-	public ArrayList<NewsCardBean> getQuestions(@Named("code") String code){
+	public ArrayList<NewsCardBean> getQuestions(@Named("code") String code, @Named("email") String email, @Named("friends") boolean friends,
+			@Named("nat") boolean nat, @Named("major") boolean major){
 		List<Activity> actList = ofy().load().type(Activity.class).list();
 		ArrayList<NewsCardBean> res = new ArrayList<>();
+		User usr = ofy().load().type(User.class).id(email).now();
 		for(Activity act : actList){
 			if(act.getWhatKind() == 2 && act.getCode().equals(code)){
-				res.add(NewsFeedApi.activityToCard(act));
+				boolean b = true;
+				User tmp = ofy().load().type(User.class).id(act.getEmail()).now();
+				if(nat){
+					b = tmp.getCountry().equals(usr.getCountry());
+				}
+				if(major)
+					b = b && tmp.getMajor().equals(usr.getMajor());
+				if(friends)
+					b = b && (act.getEmail().equals(email1) || act.getEmail().equals(email2));
+				
+				if(b)
+					res.add(NewsFeedApi.activityToCard(act));
 			}
 		}
 		Collections.sort(res, new Comparator<NewsCardBean>() {
