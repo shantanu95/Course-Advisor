@@ -9,6 +9,10 @@ body {
   overflow-x : hidden;
 }
 
+td{
+	vertical-align: middle !important;
+}
+
 .typeahead {
   background-color: #fff;
 }
@@ -253,13 +257,13 @@ body {
  
  /* For Star Rating the Course
  .titlePageSprite{
-    background-image: url("images/star.jpg");
+    background-image: url("images/star.png");
     display: inline-block;
     vertical-align: middle;
 }*/
  
  .titlePageSprite{
- background-image : url("/images/star.jpg");
+ background-image : url("/images/star.png");
 background-position: center;
 width: 66px;
 height: 66px;

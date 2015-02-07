@@ -14,7 +14,7 @@
 	<script src = "js/typeahead.js"></script>
 	<script src = "js/comeon.js"></script>
 	<!-- <script src = "js/tags.min.js"></script> -->
-	<script src = "js/mainScript.js"></script>
+	<script src = "js/insight.js"></script>
    	
 
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -101,15 +101,15 @@
           	  <!-- Single button -->
 				<div class="btn-group" >
 				  <strong>Order By : </strong>
-				  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style = "margin-left : 60%; margin-bottom : 50%;">
+				  <button id="sortButton" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style = "margin-left : 60%; margin-bottom : 50%;">
 				   Filter <span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu" role="menu">
-				    <li><a href="#">Popularity</a></li>
-				    <li><a href="#">Most Interesting</a></li>
-				    <li><a href="#">Number of Friends</a></li>
-				    <li><a href="#">Difficulty</a></li>
-				    <li><a href="#">Likeablity</a></li>
+				    <li><a href="#" id="pop">Popularity</a></li>
+				    <li><a href="#" id="numP">Number of Interested People</a></li>
+				    <li><a href="#" id="numF">Number of Friends</a></li>
+				    <li><a href="#" id="diff">Difficulty</a></li>
+				    <li><a href="#" id="like">Likeablity</a></li>
 				  </ul>
 				</div>
           
@@ -122,26 +122,21 @@
 					<th><strong><center>Difficulty</center></strong></th>
 					<th><strong><center>Likeability</center></strong></th>
 				</tr>
-				<tr>
-					<td><center><a href = "#">CZ2001 Algorithms</a></center></td>
-					<td><center>32</center></td>
-					<td><center>17</center></td>
+				<tr class="courseRow">
+					<td><center><a href = "#" id="course">CZ2001 Algorithms</a></center></td>
+					<td><center id="numSub">32</center></td>
+					<td><center id="numInterest">17</center></td>
 					<td><center><button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Friend A,<br> Friend B, Friend C, Friend D ">
   										4(Number of Friends)
 								</button> </center></td>
-					<td><center>9.1/10.0</center></td>
-					<td><center>8.5/10.0</center></td>
+					<td><center><div id="diffRating" class ="titlePageSprite star-box-giga-star" style = " float : right; margin-right : 10%; font-size:0.95em;">
+				    	4.74
+				    </div></center></td>
+					<td><center><div id="intRating" class ="titlePageSprite star-box-giga-star" style = " float : right; margin-right : 10%; font-size:0.95em;">
+				    	2.74
+				    </div></center></td>
 				</tr>
-				<tr>
-					<td><center><a href = "#">CZ1002 Intro to Python</a></center></td>
-					<td><center>23</center></td>
-					<td><center>13</center></td>
-					<td><center> <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Friend A, Friend B, Friend C, Friend D ">
-  										4(Number of Friends)
-								</button> </center></td>
-					<td><center>6.9/10.0</center></td>
-					<td><center>9.4/10.0</center></td>
-				</tr>
+				
 				
 			</table>
 			

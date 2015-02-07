@@ -4,6 +4,7 @@ import static com.googlecode.objectify.ObjectifyService.ofy;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import com.courseadvisor.bean.NewsCardBean;
@@ -27,6 +28,20 @@ public class NewsFeedApi {
 		
 		Collections.sort(l2);
 		return l2;
+	}
+	
+	@ApiMethod(path="popularCourses", httpMethod=HttpMethod.GET)
+	public List<Course> getPopularCourses(){
+		List<Course> res = ofy().load().type(Course.class).list();
+		Collections.sort(res, new Comparator<Course>() {
+
+			@Override
+			public int compare(Course o1, Course o2) {
+				// TODO Auto-generated method stub
+				return o2.getNumSubscibers() - o1.getNumSubscibers();
+			}
+		});
+		return res;
 	}
 	
 	public void createActivity(Activity act){

@@ -1,0 +1,150 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://myapp.appspot.com/_ah/api",
+  "name" : "insight",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://myapp.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "insight.insightApi.getBySubscriber" : {
+      "path" : "subscriber",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.courseadvisor.api.InsightApi.getBySubscriber",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "insight.insightApi.getLike" : {
+      "path" : "like",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.courseadvisor.api.InsightApi.getLike",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "insight.insightApi.getDiff" : {
+      "path" : "diff",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.courseadvisor.api.InsightApi.getDiff",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "insight.insightApi.getByIntPpl" : {
+      "path" : "intPpl",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.courseadvisor.api.InsightApi.getByIntPpl",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "InsightBean" : {
+        "id" : "InsightBean",
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string"
+          },
+          "title" : {
+            "type" : "string"
+          },
+          "numTaken" : {
+            "type" : "integer"
+          },
+          "numInterested" : {
+            "type" : "integer"
+          },
+          "diffRating" : {
+            "type" : "integer"
+          },
+          "interestRating" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "InsightBeanCollection" : {
+        "id" : "InsightBeanCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "InsightBean"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.courseadvisor.api.InsightApi.getBySubscriber" : {
+        "response" : {
+          "$ref" : "InsightBeanCollection"
+        }
+      },
+      "com.courseadvisor.api.InsightApi.getLike" : {
+        "response" : {
+          "$ref" : "InsightBeanCollection"
+        }
+      },
+      "com.courseadvisor.api.InsightApi.getDiff" : {
+        "response" : {
+          "$ref" : "InsightBeanCollection"
+        }
+      },
+      "com.courseadvisor.api.InsightApi.getByIntPpl" : {
+        "response" : {
+          "$ref" : "InsightBeanCollection"
+        }
+      }
+    }
+  }
+}

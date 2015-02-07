@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	ready();
+	
 	
 	$.ajaxSetup({ cache: true });
 	$.getScript("//connect.facebook.net/en_US/all.js", function() {
@@ -9,7 +9,7 @@ $(document).ready(function(){
 		});
 		FB.getLoginStatus(function(response){
 			if(response.status === 'connected'){
-				
+				ready();
 			}
 		});
 	});
@@ -52,9 +52,11 @@ var substringMatcher = function(strs) {
 	'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
 	]; 
 
+var courseTile;
 function ready(){
 	questionCard = $("#questionPanel").detach();
 	reviewCard = $("#reviewPanel").detach();
+	courseTile = $("#courseTile").detach();
 	$("#searchBox").typeahead({
 		 hint: true,
 		 highlight: true,
@@ -65,6 +67,15 @@ function ready(){
 		 source: substringMatcher(courses)
 	});
 	loadNewsFeed();
+	$.get('_ah/api/newsfeed/v1/popularCourses', function(data){
+		var main = $("#popCourseCont");
+		for(var i = 0; i < data.items.length; i++){
+			var temp = courseTile.clone();
+			temp.find("h4").html(data.items[i].code);
+			temp.find("small").html(data.items[i].title);
+			main.append(temp);
+		}
+	});
 }
 
 function loadNewsFeed(){
