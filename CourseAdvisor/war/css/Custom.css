@@ -201,7 +201,30 @@ body {
  margin-right : 48%;
  }
  
-  
+ /* For Star Rating the Course
+ .titlePageSprite{
+    background-image: url("images/star.jpg");
+    display: inline-block;
+    vertical-align: middle;
+}*/
+ 
+ .titlePageSprite{
+ background-image : url("/images/star.jpg");
+background-position: center;
+width: 66px;
+height: 66px;
+line-height: 66px;
+display: inline-block;
+text-align: center;
+vertical-align: middle;
+font-size: 15px;
+font-weight: bold;
+color: black;
+font-family: tahoma;
+float: left;
+padding-right: 5px;
+}
+ 
  
 /*
  * off Canvas sidebar
