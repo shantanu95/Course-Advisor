@@ -121,6 +121,8 @@ function ready(){
 	$('input[type=checkbox]').change(function(e){
 		addReviews($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
 	});
+	
+	
 }
 
 function addReviews(friends, nat, major){
