@@ -54,6 +54,21 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
+    "insight.insightApi.getByFriends" : {
+      "path" : "friends",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.courseadvisor.api.InsightApi.getByFriends",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
     "insight.insightApi.getByIntPpl" : {
       "path" : "intPpl",
       "httpMethod" : "GET",
@@ -131,6 +146,11 @@
         }
       },
       "com.courseadvisor.api.InsightApi.getBySubscriber" : {
+        "response" : {
+          "$ref" : "InsightBeanCollection"
+        }
+      },
+      "com.courseadvisor.api.InsightApi.getByFriends" : {
         "response" : {
           "$ref" : "InsightBeanCollection"
         }
