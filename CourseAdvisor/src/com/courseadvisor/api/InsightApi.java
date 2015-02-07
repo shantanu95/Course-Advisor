@@ -99,13 +99,13 @@ public class InsightApi {
 	
 	@ApiMethod(path="friends", httpMethod=HttpMethod.GET)
 	public List<InsightBean> getByFriends(){
-		mp.put("CZ2001", 2);
-		mp.put("AB1213", 2);
-		mp.put("CZ1002", 2);
+		mp.put("CZ2001", 1);
+		mp.put("AB1213", 4);
+		mp.put("CZ1002", 1);
 		mp.put("CZ1003", 2);
-		mp.put("BU8201", 4);
-		mp.put("MH1812", 1);
-		mp.put("HE9091", 4);
+		mp.put("BU8201", 2);
+		mp.put("MH1812", 4);
+		mp.put("HE9091", 0);
 		
 		List<Course> c = ofy().load().type(Course.class).list();
 		List<User> usr = ofy().load().type(User.class).list();
