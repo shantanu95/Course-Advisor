@@ -21,7 +21,7 @@ public class CourseApi {
 
 	@ApiMethod(path="courseData/{code}", httpMethod=HttpMethod.GET)
 	public Course getCourseData(@Named("code") String code){
-		return null;
+		return ofy().load().type(Course.class).id(code).now();
 	}
 	
 	public ArrayList<Review> getReviews(@Named("code") String code){
