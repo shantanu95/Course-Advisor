@@ -131,9 +131,8 @@ body {
   margin-bottom : 3%;
   margin-left : 2%;
   margin-right : 3%;
-  overflow-x : hidden;
-  overflow-y : hidden;
-  background-color : #ff0000;
+  overflow-x : auto;
+  overflow-y : auto;
   }
   
   .row-reviews{
@@ -153,8 +152,25 @@ body {
   margin-right : 15px;
   }
   
+  .row-course-description{
+  height : 40%;
+  margin-bottom : 5px;
+  margin-right : 5px;
+  }
+  
+  .star-rating {
+  line-height:32px;
+  font-size:1.25em;
+  cursor: pointer;
+  }
+  
+  .btn.btn-default.question{
+  font-size : 28px !important;
+  width : 40px !important;
+  }
+  
+  
   .row-panel-question{
-  height : 30%;
   width : 95%;
   margin-top : 30px;
   margin-left : 15px;
@@ -162,7 +178,6 @@ body {
   }
   
   .row-panel-review{
-  height : 30%;
   width : 95%;
   margin-top : 30px;
   margin-left : 15px;
