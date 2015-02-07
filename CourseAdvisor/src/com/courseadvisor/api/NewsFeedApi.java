@@ -30,10 +30,11 @@ public class NewsFeedApi {
 		ofy().save().entities(act).now();
 	}
 	
-	private NewsCardBean activityToCard(Activity act){
+	public static NewsCardBean activityToCard(Activity act){
 		NewsCardBean n = new NewsCardBean();
 		Course c = ofy().load().type(Course.class).id(act.getCode()).now();
 		User u = ofy().load().type(User.class).id(act.getEmail()).now();
+		n.setId(act.getId());
 		n.setCourseDetail(c.getCode() + " - " + c.getTitle());
 		n.setData(act.getActivityData());
 		n.setNumDownVotes(act.getNumDownVotes());

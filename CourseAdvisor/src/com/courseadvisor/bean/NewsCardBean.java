@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class NewsCardBean {
 
+	private Long id;
 	private String courseDetail;
 	private String userName;
 	private Date timestamp;
@@ -65,5 +66,13 @@ public class NewsCardBean {
 
 	public void setWhatKind(int whatKind) {
 		this.whatKind = whatKind;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 }

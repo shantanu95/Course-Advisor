@@ -125,40 +125,42 @@
 				      <div class = "user-comment" style = " margin-bottom : 10px; ">
 			  			<div class="input-group" >
 			      			<span class="input-group-btn">
-			        			<button class="btn btn-default" type="button" style = "margin-bottom : 30px; height : 75px;"><strong>Comment</strong></button>
+			        			<button id="reviewAdd" class="btn btn-default" type="button" style = "margin-bottom : 30px; height : 75px;"><strong>Comment</strong></button>
 			      			</span>
-			      			<input type="text" class="form-control" placeholder="Submit a Review..." style="margin-bottom : 30px; height : 75px;">
+			      			<input type="text" id="reviewData" class="form-control" placeholder="Submit a Review..." style="margin-bottom : 30px; height : 75px;">
 			    		</div><!-- /input-group -->
 			  		 </div>
 			      
+			       <div id="reviewMain">
 			        <!-- A panel for review -->
-					  <div class = "row-panel-question" style = " margin-top : 20px; margin-bottom : 10px; ">
+					  <div id="reviewCard" class = "row-panel-question" style = " margin-top : 20px; margin-bottom : 10px; ">
 					  		<div class="panel panel-info" style = " height : 100%;">
 			  					<div class="panel-heading">
-			    					<h3 class="panel-title" style = " height : 20px; "><a href="#"><strong>Virat Chopra</strong></a> added a review.</h3>
+			    					<h3 class="panel-title" style = " height : 20px; "><a href="#"><strong id="name">Virat Chopra</strong></a></h3>
 			  					</div>
 			  					<div class="panel-body" style = "height : 100%;">
 			    					<!-- <strong><a href="#">Virat Chopra</a> </strong> added a review of the course :<br><br> -->
 									<div class = " col-md-1 panel" style = " width : auto;  margin-left : 0px; padding-left : 0px;">
-										<button class="btn btn-primary" type="button" style=" width : 50px; padding-left : 5px;">
+										<button id="upButton" class="" type="button" style=" width : 50px; padding-left : 5px;">
 			  								<center>
+			  								<span id="upVoteBadge" class="badge" style = "margin-left : 2px">21
+			  								</span>
 			  								<span class="input-group-addon glyphicon glyphicon-arrow-up" id="basic-addon1" >
 			  								</span>
 			  								</center>
-			  								<span class="badge" style = "margin-left : 2px">21
-			  								</span>
+			  								
 										</button>
 										<br>
-										<button class="btn btn-primary" type="button" style = " width : 50px; padding-left : 5px; ">
+										<button id="downButton" class="" type="button" style = " width : 50px; padding-left : 5px; ">
 											<center>
 											<span class="input-group-addon glyphicon glyphicon-arrow-down" id="basic-addon1">
 											</span>
 											</center>
-			  								<span class="badge">21</span>
+			  								<span id="downVoteBadge" class="badge">21</span>
 										</button>
 									</div>
 									
-										<div class = "question">
+										<div id="data" class = "question">
 										Sample Review Regarding CZ 1003 Intro to Python....
 										</div>
 									
@@ -166,6 +168,7 @@
 			  					
 							</div>
 					  </div>
+			        </div>
 			      </div>
 			    </div>
 			  </div>
@@ -184,43 +187,45 @@
 			      <div class = "user-comment" style = " margin-bottom : 10px; ">
 		  			<div class="input-group" >
 		      			<span class="input-group-btn">
-		        			<button class="btn btn-default question" type="button" style = "margin-bottom : 30px; height : 75px;">?</button>
+		        			<button id="addQuestion" class="btn btn-default question" type="button" style = "margin-bottom : 30px; height : 75px;">?</button>
 		      			</span>
-		      			<input type="text" class="form-control" placeholder="Submit a Question..." style="margin-bottom : 30px; height : 75px;">
+		      			<input id="questionData" type="text" class="form-control" placeholder="Submit a Question..." style="margin-bottom : 30px; height : 75px;">
 		    		</div><!-- /input-group -->
 		  		</div>
 			        
 			        
 			        <!-- A panel for question -->
-					  <div class = "row-panel-question" style = " margin-top : 15px; position : relative; ">
+			        <div id="questionMain">
+					  <div id="questionCard" class = "row-panel-question" style = " margin-top : 15px; position : relative; ">
 					  		<div class="panel panel-success" style = " height : 100%; position : relative; ">
 			  					<div class="panel-heading">
-			    					<h3 class="panel-title" style = " height : 20px; "><a href="#"><strong>Virat Chopra</strong> asked a question.</a></h3>
+			    					<h3 class="panel-title" style = " height : 20px; "><a href="#"><strong id="name">Virat Chopra</strong></a></h3>
 			  					</div>
 			  					<div class="panel-body" style = "height : 100%; position : relative; ">
 			    					<!-- <strong><a href="#">Virat Chopra</a> </strong> asked a question :<br><br> -->
 									
 									<div class = " col-md-1 panel" style = " width : auto; margin-left : 0px; padding-left : 0px;">
-										<button class="btn btn-primary" type="button" style=" width : 50px; padding-left : 5px;">
+										<button id="upButton" type="button" style=" width : 50px; padding-left : 5px;">
 			  								<center>
+			  								<span id="upVoteBadge" class="badge" style = "margin-left : 2px">21
+			  								</span>
 			  								<span class="input-group-addon glyphicon glyphicon-arrow-up" id="basic-addon1" >
 			  								</span>
 			  								</center>
-			  								<span class="badge" style = "margin-left : 2px">21
-			  								</span>
+			  								
 										</button>
 										<br>
-										<button class="btn btn-primary" type="button" style = " width : 50px; padding-left : 5px; ">
+										<button id="downButton" type="button" style = " width : 50px; padding-left : 5px; ">
 											<center>
 											<span class="input-group-addon glyphicon glyphicon-arrow-down" id="basic-addon1">
 											</span>
 											</center>
-			  								<span class="badge">21</span>
+			  								<span id="downVoteBadge" class="badge">21</span>
 										</button>
 									</div>
 									
 									
-										<div class = "question" style=  "margin-top : 5px; margin-bottom : 5px; height : 80%; ">
+										<div id="data" class = "question" style=  "margin-top : 5px; margin-bottom : 5px; height : 80%; ">
 										Sample Question Regarding CZ 1002 Intro to C++?
 										</div>
 										
@@ -288,6 +293,7 @@
 			  					</div>
 							</div>
 					  </div>
+			      	</div>
 			      </div>
 			    </div>
 			  </div>
@@ -303,11 +309,11 @@
      				 <!-- div class="col-md-12"><!-->
         			 <h3><center><strong>Friends Taking The Course</strong></center></h3>
        				 <ul class="nav nav-pills nav-stacked">
-          				<li><a href="#"><img src = "http://www.esquire.com/cm/esquire/images/8O/esq-pope-style-1213-xl.jpg" width = "20" height = "20"><strong>Virat Chopra</strong></a></li>
+          				<li id="friendPill"><a href="#"><img src = "http://www.esquire.com/cm/esquire/images/8O/esq-pope-style-1213-xl.jpg" width = "30" height = "30"><span style="margin-left: .8em">Virat Chopra</span></span></a></li>
         			</ul>
         			<h3><center>Others Taking The Course</center></h3>
         			<ul class = "nav nav-pills nav-stacked">
-        				<li><a href="#"><img src = "http://www.esquire.com/cm/esquire/images/8O/esq-pope-style-1213-xl.jpg" width = "20" height = "20"><strong>Shantanu Gupta</strong></a></li>
+        				<li id="friendPill"><a href="#"><img src = "http://www.esquire.com/cm/esquire/images/8O/esq-pope-style-1213-xl.jpg" width = "30" height = "30"><span style="margin-left: .8em">Virat Chopra</span></span></a></li>
         				
         			</ul>
       			</div>
