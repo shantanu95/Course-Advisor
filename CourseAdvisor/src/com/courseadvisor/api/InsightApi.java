@@ -30,7 +30,7 @@ public class InsightApi {
 			@Override
 			public int compare(InsightBean o1, InsightBean o2) {
 				// TODO Auto-generated method stub
-				return o2.getNumTaken() - o1.getNumTaken();
+				return (int) (o2.getNumTaken() - o1.getNumTaken());
 			}
 		});
 		return i;
@@ -49,7 +49,7 @@ public class InsightApi {
 			@Override
 			public int compare(InsightBean o1, InsightBean o2) {
 				// TODO Auto-generated method stub
-				return o2.getNumInterested() - o1.getNumInterested();
+				return (int) (o2.getNumInterested() - o1.getNumInterested());
 			}
 		});
 		return i;
@@ -68,7 +68,7 @@ public class InsightApi {
 			@Override
 			public int compare(InsightBean o1, InsightBean o2) {
 				// TODO Auto-generated method stub
-				return o2.getDiffRating() - o1.getDiffRating();
+				return (int) (o2.getDiffRating() - o1.getDiffRating());
 			}
 		});
 		return i;
@@ -87,7 +87,7 @@ public class InsightApi {
 			@Override
 			public int compare(InsightBean o1, InsightBean o2) {
 				// TODO Auto-generated method stub
-				return o2.getInterestRating() - o1.getInterestRating();
+				return (int) (o2.getInterestRating() - o1.getInterestRating());
 			}
 		});
 		return i;

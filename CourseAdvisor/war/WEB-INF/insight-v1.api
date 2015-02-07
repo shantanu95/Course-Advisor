@@ -98,16 +98,16 @@
             "type" : "string"
           },
           "numTaken" : {
-            "type" : "integer"
+            "type" : "number"
           },
           "numInterested" : {
-            "type" : "integer"
+            "type" : "number"
           },
           "diffRating" : {
-            "type" : "integer"
+            "type" : "number"
           },
           "interestRating" : {
-            "type" : "integer"
+            "type" : "number"
           }
         }
       },

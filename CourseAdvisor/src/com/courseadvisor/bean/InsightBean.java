@@ -4,8 +4,8 @@ public class InsightBean {
 	
 	private String code;
 	private String title;
-	private int numTaken, numInterested;
-	private int diffRating, interestRating;
+	private double numTaken, numInterested;
+	private double diffRating, interestRating;
 	public String getCode() {
 		return code;
 	}
@@ -18,29 +18,29 @@ public class InsightBean {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public int getNumTaken() {
+	public double getNumTaken() {
 		return numTaken;
 	}
-	public void setNumTaken(int numTaken) {
+	public void setNumTaken(double numTaken) {
 		this.numTaken = numTaken;
 	}
-	public int getNumInterested() {
+	public double getNumInterested() {
 		return numInterested;
 	}
-	public void setNumInterested(int numInterested) {
+	public void setNumInterested(double numInterested) {
 		this.numInterested = numInterested;
 	}
 	
-	public int getDiffRating() {
+	public double getDiffRating() {
 		return diffRating;
 	}
-	public void setDiffRating(int diffRating) {
+	public void setDiffRating(double diffRating) {
 		this.diffRating = diffRating;
 	}
-	public int getInterestRating() {
+	public double getInterestRating() {
 		return interestRating;
 	}
-	public void setInterestRating(int interestRating) {
+	public void setInterestRating(double interestRating) {
 		this.interestRating = interestRating;
 	}
 

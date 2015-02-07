@@ -31,28 +31,28 @@ public class Course {
 	public void setAu(int au) {
 		this.au = au;
 	}
-	public int getDifficultyRating() {
+	public double getDifficultyRating() {
 		return difficultyRating;
 	}
-	public void setDifficultyRating(int difficultyRating) {
+	public void setDifficultyRating(double difficultyRating) {
 		this.difficultyRating = difficultyRating;
 	}
-	public int getNumDifficultyRaters() {
+	public double getNumDifficultyRaters() {
 		return numDifficultyRaters;
 	}
-	public void setNumDifficultyRaters(int numDifficultyRaters) {
+	public void setNumDifficultyRaters(double numDifficultyRaters) {
 		this.numDifficultyRaters = numDifficultyRaters;
 	}
-	public int getInterestRating() {
+	public double getInterestRating() {
 		return interestRating;
 	}
-	public void setInterestRating(int interestRating) {
+	public void setInterestRating(double interestRating) {
 		this.interestRating = interestRating;
 	}
-	public int getNumInterestRaters() {
+	public double getNumInterestRaters() {
 		return numInterestRaters;
 	}
-	public void setNumInterestRaters(int numInterestRaters) {
+	public void setNumInterestRaters(double numInterestRaters) {
 		this.numInterestRaters = numInterestRaters;
 	}
 	public int getNumSubscibers() {
@@ -64,8 +64,8 @@ public class Course {
 	private String title;
 	private String description;
 	private int au;
-	private int difficultyRating, numDifficultyRaters;
-	private int interestRating, numInterestRaters;
+	private double difficultyRating, numDifficultyRaters;
+	private double interestRating, numInterestRaters;
 	private int numSubscibers;
 	
 }
