@@ -10,6 +10,7 @@ import javax.inject.Named;
 
 import com.courseadvisor.bean.NewsCardBean;
 import com.courseadvisor.entity.Activity;
+import com.courseadvisor.entity.Answer;
 import com.courseadvisor.entity.Course;
 import com.courseadvisor.entity.User;
 import com.google.api.server.spi.config.Api;
@@ -97,4 +98,23 @@ public class CourseApi {
 		ofy().save().entity(act).now();
 	}
 	
+	@ApiMethod(path="createAnswer/{id}", httpMethod=HttpMethod.POST)
+	public void createAnswer(@Named("id") Long id, Answer ans){
+		ans.setId(null);
+		ofy().save().entity(ans).now();
+		Activity act = ofy().load().type(Activity.class).id(id).now();
+		act.getAnswerList().add(ans.getId());
+		ofy().save().entity(act).now();
+	}
+	
+	@ApiMethod(path="getAnswers", httpMethod=HttpMethod.GET)
+	public List<Answer> getAnswers(@Named("id") Long id){
+		Activity act = ofy().load().type(Activity.class).id(id).now();
+		Map<Long, Answer> map = ofy().load().type(Answer.class).ids(act.getAnswerList());
+		ArrayList<Answer> res = new ArrayList<>();
+		for(Long a1 : map.keySet()){
+			res.add(map.get(a1));
+		}
+		return res;
+	}
 }

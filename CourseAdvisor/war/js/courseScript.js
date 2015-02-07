@@ -18,12 +18,13 @@ $(document).ready(function(){
 
 var code;
 var email = 'shantanu002';
-var reviewCard, questionCard; 
+var reviewCard, questionCard, answerCard; 
 
 function ready(){
 	code = getUrlParameter("code");
 	reviewCard = $("#reviewCard").detach();
 	questionCard = $("#questionCard").detach();
+	answerCard = $("#answerCard").detach();
 	
 	$.get("_ah/api/courses/v1/courseData/" + code, function(data){
 		$(".page-header").find("h1").html(data.code);
@@ -63,6 +64,18 @@ function ready(){
 		$.post("_ah/api/courses/v1/addActivity", act, function(data){
 			$("#questionData").val('');
 			addQuestions();
+		});
+	});
+	
+	$(document).on("click", "#submitAnswer", function(){
+		var id = $(this).data('id');
+		var ans = {};
+		ans.email = email;
+		ans.data = $("#answerText").val();
+		$("#answerText").val('');
+		ans.timestamp = (new Date()).toJSON();
+		$.post("_ah/api/courses/v1/createAnswer/" + id, ans, function(){
+			loadAnswers();
 		});
 	});
 }
@@ -146,9 +159,30 @@ function addQuestions(){
 					bad.html(parseInt(bad.html()) + 1);
 				});
 			});
+			
+			temp.find("#answerButton").data('id', data.items[i].id);
+			temp.find("#answerButton").data('title', data.items[i].data);
+			temp.find("#answerButton").click(function(){
+				$("#submitAnswer").data('id', $(this).data('id'));
+				$("#questionText").html($(this).data('title'));
+				loadAnswers();
+			});
 			main.append(temp);
 		}
 		
+	});
+}
+
+function loadAnswers(){
+	$.get("_ah/api/courses/v1/getAnswers?id=" + $("#submitAnswer").data('id'), function(data){
+		var cont = $("#answerContainer");
+		cont.empty();
+		for(var i = 0; i < data.items.length; i++){
+			var temp = answerCard.clone();
+			temp.find("#name").html(data.items[i].email);
+			temp.find("#data").html(data.items[i].data);
+			cont.append(temp);
+		}
 	});
 }
 
