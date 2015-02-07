@@ -48,9 +48,9 @@
 	</div><!--/.navbar -->
 	
 	<div class = "row-a full-height">
-	<div class= "col-md-1"></div>
+	<!-- <div class= "col-md-1"></div> -->
 	
-	<div class = "col-md-2">
+	<div class = "col-md-2" style = " overflow-y : hidden; ">
 		<div class="row-offcanvas row-offcanvas-left">
   			<div id="sidebar" class="sidebar-offcanvas">
       		<!-- div class="col-md-12"><!-->
@@ -66,7 +66,7 @@
   		</div>
   	</div>
   	
-  	<div class = "col-md-5 full-height">
+  	<div class = "col-md-8 full-height" style = "/*background-color : #fff;*/ overflow-x : hidden; padding-left : 30px; padding-right : 50px;">
  		<div class="page-header">
   			<h1 style="margin-bottom:0;">Course Code</h1>
   			<h3 style="margin-top:5px; padding-left:5px">Course Title</h3>
@@ -75,7 +75,7 @@
   			<div class = "col-md-8 split-description" style = " height : 100%; ">
   				<div class="panel panel-default" style = " min-height : 70%; ">
 				  <div class="panel-heading">
-				    <h3 class="panel-title"><center>Course Description</center></h3>
+				    <h3 class="panel-title">Course Description</h3>
 				  </div>
 				  <div id="descriptionContent" class="panel-body" style = "height : 60%;">
 				    Panel content
@@ -86,7 +86,7 @@
   			<div class = "col-md-4 split-description" style = " height : 100%; ">
   				<div class="panel panel-default" style = " height : auto; ">
 				  <div class="panel-heading">
-				    <h3 class="panel-title"><center>Difficulty</center></h3>
+				    <h3 class="panel-title">Difficulty</h3>
 				  </div>
 				  <div class="panel-body" style = "height : auto;">
 				    Rating
@@ -97,7 +97,7 @@
 				
 				<div class="panel panel-default" style = " height : auto; ">
 				  <div class="panel-heading">
-				    <h3 class="panel-title"><center>Interesting</center></h3>
+				    <h3 class="panel-title">Interesting</h3>
 				  </div>
 				  <div class="panel-body" style = "height : auto;">
 				    Rating
@@ -108,9 +108,29 @@
   			
   		</div>
   		
-  		<div class = "row-reviews" style = " margin-top : 30px; margin-bottom : 20px; ">
+  		<!-- Filter Panel -->
+  		<div class = "row-filter " style = " margin-bottom : 10px;">
+          		<div class="input-group" style = " width : auto; font-size : 14px; ">
+      				<div class="panel panel-default" style = "width : auto; height : 7%;">
+						<div class="panel-body">
+						    <strong>Filters : Posts From</strong>
+      						<span class="input-group-addon-filter" style = " margin-left : 15px; margin-right : 10px; width : 50%; ">
+        					<input type="checkbox" aria-label="..." size = "20">
+        						<b><i>Only Friends</i></b>
+      						<input type="checkbox" aria-label="..." >
+      							<i><b>Same Nationality</b></i>
+      						<input type="checkbox" aria-label="..." >
+      							<i><b>Same Major</b></i>
+      						</span>
+      					 </div>
+      				</div>
+      			</div>
+          </div>
+          <!-- Filter Panel Ends -->
+  		
+  		<div class = "row-reviews" style = " margin-top : 0px; margin-bottom : 0px; ">
   			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-			  <div class="panel panel-default">
+			  <div class="panel panel-default" style = "margin-bottom : 25px;">
 			    <div class="panel-heading" role="tab" id="headingOne">
 			      <h4 class="panel-title">
 			        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -121,7 +141,7 @@
 			    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 			      <div class="panel-body">
 			      
-			      	 <!-- Submit A Question -->
+			      	 <!-- Submit Review -->
 				      <div class = "user-comment" style = " margin-bottom : 10px; ">
 			  			<div class="input-group" >
 			      			<span class="input-group-btn">
@@ -132,6 +152,8 @@
 			  		 </div>
 			      
 			       <div id="reviewMain">
+			        
+			        
 			        <!-- A panel for review -->
 					  <div id="reviewCard" class = "row-panel-question" style = " margin-top : 20px; margin-bottom : 10px; ">
 					  		<div class="panel panel-info" style = " height : 100%;">
@@ -169,6 +191,8 @@
 							</div>
 					  </div>
 			        </div>
+			        <!--  Panel for review ends -->
+			        
 			      </div>
 			    </div>
 			  </div>
@@ -296,7 +320,7 @@
   		</div>
   		
   	</div>
-  	<div class = "col-md-2">
+  	<div class = "col-md-2 full-height" style = " overflow-y : hidden; " >
  	<div class="row friends">
  		<div class = "friends-tickr" >
  			<div class="row-offcanvas row-offcanvas-left">

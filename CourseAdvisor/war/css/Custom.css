@@ -40,8 +40,9 @@ body {
   top : 0px; }
   
   body{
-  background-image : url("http://upload.wikimedia.org/wikipedia/commons/2/23/Hong_Kong_Skyline_Restitch_-_Dec_2007.jpg") !important; 
-  background-repeat : no-repeat;
+  /* background-image : url("http://upload.wikimedia.org/wikipedia/commons/2/23/Hong_Kong_Skyline_Restitch_-_Dec_2007.jpg") !important; */ 
+  background-image : url("http://webdesignledger.com/wp-content/uploads/2012/09/patterns02.jpg") !important;
+  background-repeat : repeat;
   background-attachement : scroll;
   }
   
