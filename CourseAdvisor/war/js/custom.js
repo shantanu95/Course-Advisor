@@ -1,7 +1,7 @@
 /**
  * Facebook SDK included below
  */
-
+/*
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '1382611612050608',
@@ -22,11 +22,14 @@ window.fbAsyncInit = function() {
 Side Bar Code As Below
 **/
 
+/*
 $(document).ready(function() {
 	  $('[data-toggle=offcanvas]').click(function() {
 	    $('.row-offcanvas').toggleClass('active');
 	  });
 	});
+	
+	*/
 
 /* var citynames = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -49,6 +52,8 @@ $('input').tagsinput({
     source: citynames.ttAdapter()
   }
 }); */
+
+/*
 
 var citynames = new Bloodhound({
 	  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -74,7 +79,7 @@ var citynames = new Bloodhound({
 	});
 
 	
-	/* Adding Star-Rating Java Script */
+	/* Adding Star-Rating Java Script 
 	var $star_rating = $('.star-rating .fa');
 
 	var SetRatingStar = function() {
@@ -94,3 +99,8 @@ var citynames = new Bloodhound({
 
 	SetRatingStar();
 
+*/
+
+$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
