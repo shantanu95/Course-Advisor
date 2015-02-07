@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import javax.inject.Named;
+
 import com.courseadvisor.bean.NewsCardBean;
 import com.courseadvisor.entity.Activity;
 import com.courseadvisor.entity.Course;
@@ -29,6 +31,20 @@ public class NewsFeedApi {
 		Collections.sort(l2);
 		return l2;
 	}
+	
+	@ApiMethod(path="getFrndActivity", httpMethod=HttpMethod.GET)
+	public List<NewsCardBean> getFrndActivity(@Named("email1") String email1, @Named("email2") String email2){
+		List<Activity> l = ofy().load().type(Activity.class).list();
+		List<NewsCardBean> l2 = new ArrayList<>();
+		for(Activity a:l){
+			if(email1.equals(a.getEmail()) || email2.equals(a.getEmail()))
+				l2.add(activityToCard(a));
+		}
+		
+		Collections.sort(l2);
+		return l2;
+	}
+	
 	
 	@ApiMethod(path="popularCourses", httpMethod=HttpMethod.GET)
 	public List<Course> getPopularCourses(){

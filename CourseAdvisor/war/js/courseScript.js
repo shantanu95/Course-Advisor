@@ -118,7 +118,7 @@ function ready(){
 	}
 	
 	addReviews(false, false, false);
-	addQuestions();
+	addQuestions(false, false, false);
 	
 	$("#reviewAdd").click(function(e){
 		var act = {};
@@ -132,7 +132,7 @@ function ready(){
 		act.timestamp = (new Date()).toJSON();
 		$.post("_ah/api/courses/v1/addActivity", act, function(data){
 			$("#reviewData").val('');
-			addReviews();
+			addReviews($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
 		});
 	});
 	
@@ -148,7 +148,7 @@ function ready(){
 		act.timestamp = (new Date()).toJSON();
 		$.post("_ah/api/courses/v1/addActivity", act, function(data){
 			$("#questionData").val('');
-			addQuestions();
+			addQuestions($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
 		});
 	});
 	
@@ -179,9 +179,17 @@ function ready(){
 	
 	$('input[type=checkbox]').change(function(e){
 		addReviews($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
+		addQuestions($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
 	});
 	
+	$("#refreshReview").click(function(){
+		addReviews($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
+	});
 	
+	$("#refreshQuestion").click(function(){
+		addQuestions($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
+	});
+
 }
 
 function addReviews(friends, nat, major){
@@ -228,8 +236,9 @@ function addReviews(friends, nat, major){
 	});
 }
 
-function addQuestions(){
-	$.get("_ah/api/courses/v1/getQuestions/" + code, function(data){
+function addQuestions(friends, nat, major){
+	$.get("_ah/api/courses/v1/getQuestions/" + code + "?email=" + encodeURIComponent(email) + "&friends=" + friends + "&nat=" + nat + "&major=" + major, 
+			function(data){
 		
 		var main = $("#questionMain");
 		main.empty();
