@@ -3,6 +3,7 @@ package com.courseadvisor.api;
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.courseadvisor.bean.NewsCardBean;
@@ -23,6 +24,8 @@ public class NewsFeedApi {
 		for(Activity a:l){
 			l2.add(activityToCard(a));
 		}
+		
+		Collections.sort(l2);
 		return l2;
 	}
 	

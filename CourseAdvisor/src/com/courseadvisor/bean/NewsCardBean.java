@@ -2,7 +2,7 @@ package com.courseadvisor.bean;
 
 import java.util.Date;
 
-public class NewsCardBean {
+public class NewsCardBean implements Comparable<NewsCardBean>{
 
 	private Long id;
 	private String courseDetail;
@@ -74,5 +74,11 @@ public class NewsCardBean {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	@Override
+	public int compareTo(NewsCardBean o) {
+		// TODO Auto-generated method stub
+		return o.getTimestamp().compareTo(this.timestamp);
 	}
 }

@@ -17,31 +17,37 @@ $(document).ready(function(){
 });
 
 function ready(){
+	questionCard = $("#questionPanel").detach();
+	reviewCard = $("#reviewPanel").detach();
+	loadNewsFeed();
+}
+
+function loadNewsFeed(){
 	$.get('_ah/api/newsfeed/v1/getActivity', function(data){
 		
-		var questionCard = $("#questionPanel").detach();
-		var reviewCard = $("#reviewPanel").detach();
-		var main = $("#main");
 		
+		var main = $("#main");
+		main.empty();
 		for(var i = 0; i < data.items.length; i++){
 			var item = data.items[i];
 			var temp;
 			if(item.whatKind == 2){
 				temp = questionCard.clone();
 				temp.find("h3").html(data.items[i].courseDetail);
-				temp.find("#nameDegree").html(data.items[i].userName);
+				temp.find("#name").html(data.items[i].userName);
 				temp.find(".question").html(data.items[i].data);
 				main.append(temp);
 			}else if(item.whatKind == 1){
 				temp = reviewCard.clone();
 				temp.find("h3").html(data.items[i].courseDetail);
-				temp.find("#nameDegree").html(data.items[i].userName);
+				temp.find("#name").html(data.items[i].userName);
 				temp.find(".question").html(data.items[i].data);
 				main.append(temp);
 			}
 			
 		}
 		
+		setTimeout(loadNewsFeed, 5000);
 		
 	});
 }

@@ -7,7 +7,7 @@ import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 
 @Entity
-public class Activity {
+public class Activity implements Comparable<Activity>{
 	
 	@Id private Long id;
 	private String code;
@@ -88,5 +88,17 @@ public class Activity {
 
 	public void setNumUpVotes(int numUpVotes) {
 		this.numUpVotes = numUpVotes;
+	}
+
+	@Override
+	public int compareTo(Activity o) {
+		// TODO Auto-generated method stub
+		int v1 = numUpVotes - numDownVotes;
+		int v2 = o.getNumUpVotes() - o.getNumDownVotes();
+		int diff = v2 - v1;
+		if(diff == 0){
+			return o.getTimestamp().compareTo(timestamp);
+		}else
+			return diff;
 	}
 }

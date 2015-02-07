@@ -3,6 +3,8 @@ package com.courseadvisor.api;
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -30,14 +32,39 @@ public class CourseApi {
 	}
 	
 	@ApiMethod(path="getReviews/{code}", httpMethod=HttpMethod.GET)
-	public ArrayList<NewsCardBean> getReviews(@Named("code") String code){
+	public ArrayList<NewsCardBean> getReviews(@Named("code") String code, @Named("email") String email, @Named("friends") boolean friends,
+			@Named("nat") boolean nat, @Named("major") boolean major){
 		List<Activity> actList = ofy().load().type(Activity.class).list();
 		ArrayList<NewsCardBean> res = new ArrayList<>();
+		User usr = ofy().load().type(User.class).id(email).now();
 		for(Activity act : actList){
 			if(act.getWhatKind() == 1 && act.getCode().equals(code)){
-				res.add(NewsFeedApi.activityToCard(act));
+				boolean b = true;
+				User tmp = ofy().load().type(User.class).id(act.getEmail()).now();
+				if(nat){
+					b = tmp.getCountry().equals(usr.getCountry());
+				}
+				if(major)
+					b = b && tmp.getMajor().equals(usr.getMajor());
+				
+				if(b)
+					res.add(NewsFeedApi.activityToCard(act));
 			}
 		}
+		Collections.sort(res, new Comparator<NewsCardBean>() {
+
+			@Override
+			public int compare(NewsCardBean o1, NewsCardBean o2) {
+				// TODO Auto-generated method stub
+				int v1 = o1.getNumUpVotes() - o1.getNumDownVotes();
+				int v2 = o2.getNumUpVotes() - o2.getNumDownVotes();
+				int diff = v2 - v1;
+				if(diff == 0){
+					return o2.getTimestamp().compareTo(o1.getTimestamp());
+				}else
+					return diff;
+			}
+		});
 		return res;
 	}
 	
@@ -55,6 +82,21 @@ public class CourseApi {
 				res.add(NewsFeedApi.activityToCard(act));
 			}
 		}
+		Collections.sort(res, new Comparator<NewsCardBean>() {
+
+			@Override
+			public int compare(NewsCardBean o1, NewsCardBean o2) {
+				// TODO Auto-generated method stub
+				int v1 = o1.getNumUpVotes() - o1.getNumDownVotes();
+				int v2 = o2.getNumUpVotes() - o2.getNumDownVotes();
+				int diff = v2 - v1;
+				if(diff == 0){
+					return o2.getTimestamp().compareTo(o1.getTimestamp());
+				}else
+					return diff;
+			}
+		});
+
 		return res;
 	}
 	
@@ -115,6 +157,7 @@ public class CourseApi {
 		for(Long a1 : map.keySet()){
 			res.add(map.get(a1));
 		}
+		Collections.sort(res);
 		return res;
 	}
 }

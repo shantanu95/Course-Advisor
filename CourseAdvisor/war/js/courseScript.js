@@ -17,7 +17,17 @@ $(document).ready(function(){
 var code;
 var email = 'shantanu002';
 var reviewCard, questionCard, answerCard; 
+var friendPill;
 var friendList = [];
+
+var taken = {
+		'CZ2001' : [
+		            {name: 'Virat Chopra', url: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10474640_875980565747406_7800170515321927365_n.jpg?oh=356e69e8a8cb6a5138614c45d1f5d929&oe=55570BF8&__gda__=1432709326_e1d0b1889bf6a3bd7da229e99eee5551'}]
+}
+
+var interested = {
+		'CZ2001' : [{name: 'Virat Chopra', url: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10474640_875980565747406_7800170515321927365_n.jpg?oh=356e69e8a8cb6a5138614c45d1f5d929&oe=55570BF8&__gda__=1432709326_e1d0b1889bf6a3bd7da229e99eee5551'}]
+}
 
 var idToEmail ={
 		'932847806727348' : 'shantanu002'
@@ -28,6 +38,7 @@ function ready(){
 	reviewCard = $("#reviewCard").detach();
 	questionCard = $("#questionCard").detach();
 	answerCard = $("#answerCard").detach();
+	friendPill = $("#friendPill").detach();
 	
 	$.get("_ah/api/courses/v1/courseData/" + code, function(data){
 		$(".page-header").find("h1").html(data.code);
@@ -35,24 +46,21 @@ function ready(){
 		$("#descriptionContent").html(data.description);
 	});
 	
-	FB.api("/me/friends", function(resp){
-		
-		for(var i = 0; i < resp.data.length; i++){
-			friendList[i] = idToEmail[resp.data[i].id];
-		}
-		
-		var url = "_ah/api/courses/v1/getTakenFriends/" + code;
-		url += "?email=" + encodeURIComponent(email);
-		for(var x = 0; x < friendList.length; x++){
-			url += "&friends=" + encodeURIComponent(friendList[x]);
-		}
-		$.get(url, function(data){
-			console.log('friends');
-			console.log(data);
-		});
-	});
+	for(var i = 0; i < taken[code].length; i++){
+		var temp = friendPill.clone();
+		temp.find("img").attr("src", taken[code][i].url);
+		temp.find("span").html(taken[code][i].name);
+		$("#takenContainer").append(temp);
+	}
 	
-	addReviews();
+	for(var i = 0; i < interested[code].length; i++){
+		var temp = friendPill.clone();
+		temp.find("img").attr("src", interested[code][i].url);
+		temp.find("span").html(interested[code][i].name);
+		$("#interestContainer").append(temp);
+	}
+	
+	addReviews(false, false, false);
 	addQuestions();
 	
 	$("#reviewAdd").click(function(e){
@@ -99,11 +107,25 @@ function ready(){
 		});
 	});
 	
+	$('a[href="#collapseOne"]').click(function(){
+		setTimeout(function(){$("#mainContainer").scrollTo("#headingOne", 800);}, 500);
+		
+	});
+	$('a[href="#collapseTwo"]').click(function(){
+		setTimeout(function(){$("#mainContainer").scrollTo("#headingTwo", 800);}, 500);
+	});
+	
+	
 	$('a[href="#collapseOne"]').click();
+	
+	$('input[type=checkbox]').change(function(e){
+		addReviews($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
+	});
 }
 
-function addReviews(){
-	$.get("_ah/api/courses/v1/getReviews/" + code, function(data){
+function addReviews(friends, nat, major){
+	$.get("_ah/api/courses/v1/getReviews/" + code + "?email=" + encodeURIComponent(email) + "&friends=" + friends + "&nat=" + nat + "&major=" + major, 
+			function(data){
 		
 		var main = $("#reviewMain");
 		main.empty();

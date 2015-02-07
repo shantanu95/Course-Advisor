@@ -13,6 +13,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src = "js/typeahead.js"></script>
 	<script src = "js/tags.min.js"></script>
+	<script src = "js/jquery.scrollTo.min.js"></script>
 	<script src = "js/courseScript.js"></script>
 
 	<!--  -->
@@ -66,7 +67,7 @@
   		</div>
   	</div>
   	
-  	<div class = "col-md-8 full-height" style = "/*background-color : #fff;*/ overflow-x : hidden; padding-left : 30px; padding-right : 50px;">
+  	<div id="mainContainer" class = "col-md-8 full-height" style = "/*background-color : #fff;*/ overflow-x : hidden; padding-left : 30px; padding-right : 50px;">
  		<div class="page-header">
   			<h1 style="margin-bottom:0;">Course Code</h1>
   			<h3 style="margin-top:5px; padding-left:5px">Course Title</h3>
@@ -116,11 +117,11 @@
 						<div class="panel-body">
 						    <strong>Filters : Posts From</strong>
       						<span class="input-group-addon-filter" style = " margin-left : 15px; margin-right : 10px; width : 50%; ">
-        					<input type="checkbox" aria-label="..." size = "20">
+        					<input id="friendsOnly" type="checkbox" aria-label="..." size = "20">
         						<b><i>Only Friends</i></b>
-      						<input type="checkbox" aria-label="..." >
+      						<input id="natOnly" type="checkbox" aria-label="..." >
       							<i><b>Same Nationality</b></i>
-      						<input type="checkbox" aria-label="..." >
+      						<input id="majorOnly" type="checkbox" aria-label="..." >
       							<i><b>Same Major</b></i>
       						</span>
       					 </div>
@@ -329,10 +330,10 @@
      				 <!-- div class="col-md-12"><!-->
         			 <h3><center><strong>Friends Taking The Course</strong></center></h3>
        				 <ul id="takenContainer" class="nav nav-pills nav-stacked">
-          				<li id="friendPill"><a href="#"><img src = "http://www.esquire.com/cm/esquire/images/8O/esq-pope-style-1213-xl.jpg" width = "30" height = "30"><span style="margin-left: .8em">Virat Chopra</span></span></a></li>
+          				<li id="friendPill"><a href="#"><img src = "http://www.esquire.com/cm/esquire/images/8O/esq-pope-style-1213-xl.jpg" width = "30" height = "30"><span style="margin-left: .8em">Virat Chopra</span></a></li>
         			</ul>
         			<h3><center>Others Taking The Course</center></h3>
-        			<ul class = "nav nav-pills nav-stacked">
+        			<ul id="interestContainer" class = "nav nav-pills nav-stacked">
         				
         			</ul>
       			</div>

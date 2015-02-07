@@ -6,7 +6,7 @@ import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 
 @Entity
-public class Answer {
+public class Answer implements Comparable<Answer>{
 
 	@Id private Long id;
 	private String email;
@@ -36,5 +36,10 @@ public class Answer {
 	}
 	public void setTimestamp(Date timestamp) {
 		this.timestamp = timestamp;
+	}
+	@Override
+	public int compareTo(Answer o) {
+		// TODO Auto-generated method stub
+		return o.getTimestamp().compareTo(timestamp);
 	}
 }
