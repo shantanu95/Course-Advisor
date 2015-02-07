@@ -64,8 +64,8 @@ public class Course {
 	private String title;
 	private String description;
 	private int au;
-	private int difficultyRating, numDifficultyRaters;
-	private int interestRating, numInterestRaters;
+	private double difficultyRating, numDifficultyRaters;
+	private double interestRating, numInterestRaters;
 	private int numSubscibers;
 	
 }
