@@ -24,21 +24,6 @@
     "maxAge" : 0
   },
   "methods" : {
-    "insight.insightApi.getBySubscriber" : {
-      "path" : "subscriber",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.courseadvisor.api.InsightApi.getBySubscriber",
-      "request" : {
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
     "insight.insightApi.getLike" : {
       "path" : "like",
       "httpMethod" : "GET",
@@ -54,14 +39,14 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "insight.insightApi.getDiff" : {
-      "path" : "diff",
+    "insight.insightApi.getBySubscriber" : {
+      "path" : "subscriber",
       "httpMethod" : "GET",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.courseadvisor.api.InsightApi.getDiff",
+      "rosyMethod" : "com.courseadvisor.api.InsightApi.getBySubscriber",
       "request" : {
         "body" : "empty"
       },
@@ -77,6 +62,21 @@
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
       "rosyMethod" : "com.courseadvisor.api.InsightApi.getByIntPpl",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "insight.insightApi.getDiff" : {
+      "path" : "diff",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.courseadvisor.api.InsightApi.getDiff",
       "request" : {
         "body" : "empty"
       },
@@ -125,22 +125,22 @@
       }
     },
     "methods" : {
-      "com.courseadvisor.api.InsightApi.getBySubscriber" : {
-        "response" : {
-          "$ref" : "InsightBeanCollection"
-        }
-      },
       "com.courseadvisor.api.InsightApi.getLike" : {
         "response" : {
           "$ref" : "InsightBeanCollection"
         }
       },
-      "com.courseadvisor.api.InsightApi.getDiff" : {
+      "com.courseadvisor.api.InsightApi.getBySubscriber" : {
         "response" : {
           "$ref" : "InsightBeanCollection"
         }
       },
       "com.courseadvisor.api.InsightApi.getByIntPpl" : {
+        "response" : {
+          "$ref" : "InsightBeanCollection"
+        }
+      },
+      "com.courseadvisor.api.InsightApi.getDiff" : {
         "response" : {
           "$ref" : "InsightBeanCollection"
         }
