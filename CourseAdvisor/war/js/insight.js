@@ -77,6 +77,7 @@ function ready(){
 				row.find("#numInterest").html(data.items[i].numInterested);
 				row.find("#diffRating").html(data.items[i].diffRating);
 				row.find("#intRating").html(data.items[i].interestRating);
+				row.find("#numFriends").html(interested[data.items[i].code].length);
 				$("table").append(row);
 			}
 		});
@@ -93,6 +94,7 @@ function ready(){
 				row.find("#numInterest").html(data.items[i].numInterested);
 				row.find("#diffRating").html(data.items[i].diffRating);
 				row.find("#intRating").html(data.items[i].interestRating);
+				row.find("#numFriends").html(interested[data.items[i].code].length);
 				$("table").append(row);
 			}
 		});
@@ -109,6 +111,7 @@ function ready(){
 				row.find("#numInterest").html(data.items[i].numInterested);
 				row.find("#diffRating").html(data.items[i].diffRating);
 				row.find("#intRating").html(data.items[i].interestRating);
+				row.find("#numFriends").html(interested[data.items[i].code].length);
 				$("table").append(row);
 			}
 		});
@@ -125,6 +128,7 @@ function ready(){
 				row.find("#numInterest").html(data.items[i].numInterested);
 				row.find("#diffRating").html(data.items[i].diffRating);
 				row.find("#intRating").html(data.items[i].interestRating);
+				row.find("#numFriends").html(interested[data.items[i].code].length);
 				$("table").append(row);
 			}
 		});
@@ -141,6 +145,7 @@ function ready(){
 				row.find("#numInterest").html(data.items[i].numInterested);
 				row.find("#diffRating").html(data.items[i].diffRating);
 				row.find("#intRating").html(data.items[i].interestRating);
+				row.find("#numFriends").html(interested[data.items[i].code].length);
 				$("table").append(row);
 			}
 		});
