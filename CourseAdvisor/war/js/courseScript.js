@@ -1,7 +1,5 @@
 $(document).ready(function(){
 	
-	ready();
-	
 	$.ajaxSetup({ cache: true });
 	$.getScript("//connect.facebook.net/en_US/all.js", function() {
 		FB.init({
@@ -9,7 +7,7 @@ $(document).ready(function(){
 		});
 		FB.getLoginStatus(function(response){
 			if(response.status === 'connected'){
-				
+				ready();
 			}
 		});
 	});
@@ -19,6 +17,11 @@ $(document).ready(function(){
 var code;
 var email = 'shantanu002';
 var reviewCard, questionCard, answerCard; 
+var friendList = [];
+
+var idToEmail ={
+		'932847806727348' : 'shantanu002'
+}
 
 function ready(){
 	code = getUrlParameter("code");
@@ -30,6 +33,23 @@ function ready(){
 		$(".page-header").find("h1").html(data.code);
 		$(".page-header").find("h3").html(data.title);
 		$("#descriptionContent").html(data.description);
+	});
+	
+	FB.api("/me/friends", function(resp){
+		
+		for(var i = 0; i < resp.data.length; i++){
+			friendList[i] = idToEmail[resp.data[i].id];
+		}
+		
+		var url = "_ah/api/courses/v1/getTakenFriends/" + code;
+		url += "?email=" + encodeURIComponent(email);
+		for(var x = 0; x < friendList.length; x++){
+			url += "&friends=" + encodeURIComponent(friendList[x]);
+		}
+		$.get(url, function(data){
+			console.log('friends');
+			console.log(data);
+		});
 	});
 	
 	addReviews();
@@ -78,6 +98,8 @@ function ready(){
 			loadAnswers();
 		});
 	});
+	
+	$('a[href="#collapseOne"]').click();
 }
 
 function addReviews(){

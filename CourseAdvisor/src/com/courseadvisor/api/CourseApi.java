@@ -65,7 +65,7 @@ public class CourseApi {
 		Map<String, User> map = ofy().load().type(User.class).ids(friends);
 		for(String s:map.keySet()){
 			User usr = map.get(s);
-			if(usr.getCoursesTaken().contains(code)){
+			if(usr.getCoursesTaken().contains(code) || true){
 				users.add(usr);
 			}
 		}
@@ -73,7 +73,7 @@ public class CourseApi {
 		return users;
 	}
 	
-	@ApiMethod(path="getinterestedFriends/{code}", httpMethod=HttpMethod.POST)
+	@ApiMethod(path="getinterestedFriends/{code}", httpMethod=HttpMethod.GET)
 	public ArrayList<User> getInterestedFriends(@Named("code") String code, @Named("email") String email,
 			@Named("friends") List<String> friends){
 		ArrayList<User> users = new ArrayList<>();
