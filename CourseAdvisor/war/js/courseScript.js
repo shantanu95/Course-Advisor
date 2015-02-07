@@ -15,18 +15,22 @@ $(document).ready(function(){
 });
 
 var code;
-var email = 'shantanu002';
+var email = 'virat1309@gmail.com';
 var reviewCard, questionCard, answerCard; 
 var friendPill;
 var friendList = [];
 
 var taken = {
 		'CZ2001' : [
-		            {name: 'Virat Chopra', url: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10474640_875980565747406_7800170515321927365_n.jpg?oh=356e69e8a8cb6a5138614c45d1f5d929&oe=55570BF8&__gda__=1432709326_e1d0b1889bf6a3bd7da229e99eee5551'}]
+		            {name: 'Virat Chopra', url: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10474640_875980565747406_7800170515321927365_n.jpg?oh=356e69e8a8cb6a5138614c45d1f5d929&oe=55570BF8&__gda__=1432709326_e1d0b1889bf6a3bd7da229e99eee5551'},
+		            ],
+		'AB1213' : []
 }
 
 var interested = {
-		'CZ2001' : [{name: 'Virat Chopra', url: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10474640_875980565747406_7800170515321927365_n.jpg?oh=356e69e8a8cb6a5138614c45d1f5d929&oe=55570BF8&__gda__=1432709326_e1d0b1889bf6a3bd7da229e99eee5551'}]
+		'CZ2001' : [{name: 'Virat Chopra', url: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10474640_875980565747406_7800170515321927365_n.jpg?oh=356e69e8a8cb6a5138614c45d1f5d929&oe=55570BF8&__gda__=1432709326_e1d0b1889bf6a3bd7da229e99eee5551'}
+		],
+		'AB1213' : []
 }
 
 var idToEmail ={

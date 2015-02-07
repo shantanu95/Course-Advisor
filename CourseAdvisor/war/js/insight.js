@@ -21,10 +21,10 @@ function ready(){
 	row1 = $(".courseRow").detach();
 	$("table .courseRow").remove();
 	$.get("_ah/api/insight/v1/subscriber", function(data){
-		
+		console.log(data);
 		for(var i = 0; i < data.items.length; i++){
 			var row = row1.clone();
-			row.find("#id").html(data.items[i].code + " - " + data.items[i].title);
+			row.find("#course").html(data.items[i].code + " - " + data.items[i].title);
 			row.find("#numSub").html(data.items[i].numTaken);
 			row.find("#numInterest").html(data.items[i].numInterested);
 			row.find("#diffRating").html(data.items[i].diffRating);
@@ -33,13 +33,29 @@ function ready(){
 		}
 	});
 	
+	$("#pop").click(function(e){
+		$("table .courseRow").remove();
+		$.get("_ah/api/insight/v1/subscriber", function(data){
+			
+			for(var i = 0; i < data.items.length; i++){
+				var row = row1.clone();
+				row.find("#course").html(data.items[i].code + " - " + data.items[i].title);
+				row.find("#numSub").html(data.items[i].numTaken);
+				row.find("#numInterest").html(data.items[i].numInterested);
+				row.find("#diffRating").html(data.items[i].diffRating);
+				row.find("#intRating").html(data.items[i].interestRating);
+				$("table").append(row);
+			}
+		});
+	});
+	
 	$("#numP").click(function(e){
 		$("table .courseRow").remove();
 		$.get("_ah/api/insight/v1/intPpl", function(data){
 			
 			for(var i = 0; i < data.items.length; i++){
 				var row = row1.clone();
-				row.find("#id").html(data.items[i].code + " - " + data.items[i].title);
+				row.find("#course").html(data.items[i].code + " - " + data.items[i].title);
 				row.find("#numSub").html(data.items[i].numTaken);
 				row.find("#numInterest").html(data.items[i].numInterested);
 				row.find("#diffRating").html(data.items[i].diffRating);
@@ -55,7 +71,7 @@ function ready(){
 			
 			for(var i = 0; i < data.items.length; i++){
 				var row = row1.clone();
-				row.find("#id").html(data.items[i].code + " - " + data.items[i].title);
+				row.find("#course").html(data.items[i].code + " - " + data.items[i].title);
 				row.find("#numSub").html(data.items[i].numTaken);
 				row.find("#numInterest").html(data.items[i].numInterested);
 				row.find("#diffRating").html(data.items[i].diffRating);
@@ -71,7 +87,7 @@ function ready(){
 			
 			for(var i = 0; i < data.items.length; i++){
 				var row = row1.clone();
-				row.find("#id").html(data.items[i].code + " - " + data.items[i].title);
+				row.find("#course").html(data.items[i].code + " - " + data.items[i].title);
 				row.find("#numSub").html(data.items[i].numTaken);
 				row.find("#numInterest").html(data.items[i].numInterested);
 				row.find("#diffRating").html(data.items[i].diffRating);
@@ -87,7 +103,7 @@ function ready(){
 			
 			for(var i = 0; i < data.items.length; i++){
 				var row = row1.clone();
-				row.find("#id").html(data.items[i].code + " - " + data.items[i].title);
+				row.find("#course").html(data.items[i].code + " - " + data.items[i].title);
 				row.find("#numSub").html(data.items[i].numTaken);
 				row.find("#numInterest").html(data.items[i].numInterested);
 				row.find("#diffRating").html(data.items[i].diffRating);

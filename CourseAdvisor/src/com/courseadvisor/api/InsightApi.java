@@ -23,7 +23,7 @@ public class InsightApi {
 		List<User> usr = ofy().load().type(User.class).list();
 		List<InsightBean> i = new ArrayList<>();
 		for(Course cx : c){
-			i.add(cToI(cx, usr));
+			i.add(cToI(cx));
 		}
 		Collections.sort(i, new Comparator<InsightBean>() {
 
@@ -42,7 +42,7 @@ public class InsightApi {
 		List<User> usr = ofy().load().type(User.class).list();
 		List<InsightBean> i = new ArrayList<>();
 		for(Course cx : c){
-			i.add(cToI(cx, usr));
+			i.add(cToI(cx));
 		}
 		Collections.sort(i, new Comparator<InsightBean>() {
 
@@ -61,7 +61,7 @@ public class InsightApi {
 		List<User> usr = ofy().load().type(User.class).list();
 		List<InsightBean> i = new ArrayList<>();
 		for(Course cx : c){
-			i.add(cToI(cx, usr));
+			i.add(cToI(cx));
 		}
 		Collections.sort(i, new Comparator<InsightBean>() {
 
@@ -80,7 +80,7 @@ public class InsightApi {
 		List<User> usr = ofy().load().type(User.class).list();
 		List<InsightBean> i = new ArrayList<>();
 		for(Course cx : c){
-			i.add(cToI(cx, usr));
+			i.add(cToI(cx));
 		}
 		Collections.sort(i, new Comparator<InsightBean>() {
 
@@ -94,20 +94,14 @@ public class InsightApi {
 	}
 	
 	
-	private InsightBean cToI(Course c, List<User> usr){
+	private InsightBean cToI(Course c){
 		InsightBean b = new InsightBean();
 		b.setCode(c.getCode());
 		b.setDiffRating(c.getDifficultyRating());
 		b.setInterestRating(c.getInterestRating());
 		int c1 = 0, c2=0;
-		for (User u : usr){
-			if(u.getCoursesTaken().contains(c.getCode()))
-				c1++;
-			if(u.getCoursesInterestedIn().contains(c.getCode()))
-				c2++;
-		}
-		b.setNumTaken(c1);
-		b.setNumInterested(c2);;
+		b.setNumTaken(c.getNumSubscibers());
+		b.setNumInterested(c2);
 		b.setTitle(c.getTitle());
 		return b;
 	}
