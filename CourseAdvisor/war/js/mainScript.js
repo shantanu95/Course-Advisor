@@ -72,8 +72,8 @@ function ready(){
 	
 	$("input[type=checkbox]").change(function(e){
 		if($("input[type=checkbox]").prop("checked")){
-			$.get('_ah/api/newsfeed/v1/getFrndActivity?email1=' + encodeURIComponent("shantanu002") + 
-					"&email2=" + encodeURIComponent(""), function(data){
+			$.get('_ah/api/newsfeed/v1/getFrndActivity?email1=' + encodeURIComponent("luihu@singamail.com") + 
+					"&email2=" + encodeURIComponent("krishan1309@memail.com"), function(data){
 				
 				var main = $("#main");
 				main.empty();

@@ -56,7 +56,7 @@ var taken = {
 }
 
 var interested = {
-		'CZ2001' : [{name: 'Virat Chopra', url: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10474640_875980565747406_7800170515321927365_n.jpg?oh=356e69e8a8cb6a5138614c45d1f5d929&oe=55570BF8&__gda__=1432709326_e1d0b1889bf6a3bd7da229e99eee5551'},
+		'CZ2001' : [
 					{name: 'Joshua Ninan', url: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/c0.0.200.200/p200x200/537120_643601862342573_303274490_n.jpg?oh=c9cc87af65961448539a543358ac9c89&oe=559538B3&__gda__=1432673100_6853a9c88273f003092267a19406df7b'}
 					],
 		'AB1213' : [
@@ -182,13 +182,7 @@ function ready(){
 		addQuestions($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
 	});
 	
-	$("#refreshReview").click(function(){
-		addReviews($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
-	});
 	
-	$("#refreshQuestion").click(function(){
-		addQuestions($("#friendsOnly").prop("checked"), $("#natOnly").prop("checked"), $("#majorOnly").prop("checked"));
-	});
 
 }
 

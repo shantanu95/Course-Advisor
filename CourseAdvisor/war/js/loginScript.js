@@ -13,7 +13,7 @@ $(document).ready(function(){
 function ready(){
 	
 	FB.getLoginStatus(function(response){
-		handleResponse(response);
+		//handleResponse(response);
 	});
 	
 	$("button").click(function(e){

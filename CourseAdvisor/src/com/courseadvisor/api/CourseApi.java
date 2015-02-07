@@ -22,7 +22,7 @@ import com.google.api.server.spi.config.ApiMethod.HttpMethod;
 @Api(name="courses")
 public class CourseApi {
 	
-	private String email1 = "", email2 = ""; 
+	private String email1 = "krishan1309@memail.com", email2 = "luihu@singamail.coms"; 
 	
 	public void createCourse(Course c){
 		ofy().save().entity(c).now();
