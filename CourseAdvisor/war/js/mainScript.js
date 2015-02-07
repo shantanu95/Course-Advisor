@@ -41,7 +41,7 @@ var substringMatcher = function(strs) {
 	};
 	};
 	 
-	var courses = ['CZ2001 - Algorithms', 'AB1213'
+	var courses = ['CZ2001 - Algorithms', 'AB1213 - Arts and Media', 'HE9091 - Economics', 'CZ1002 - Introduction to C++', 'CZ1003 - Intro to Python', 'MH1812 - Discrete Mathematics', 'BU8201 - Business Finance'
 	]; 	
 
 var courseTile;
